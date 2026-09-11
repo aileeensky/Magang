@@ -1,0 +1,172 @@
+- generic [ref=f3e1]:
+  - alert [ref=f3e47]
+  - generic [ref=f3e48]:
+    - complementary [ref=f3e49]:
+      - text: 
+      - generic [ref=f3e50]:
+        - generic [ref=f3e51]:
+          - generic [ref=f3e52]: S
+          - generic [ref=f3e53]:
+            - generic [ref=f3e54]: SIMONIK
+            - generic [ref=f3e55]: Monitoring Informasi Kinerja KPK
+        - generic [ref=f3e56]: MODUL
+      - navigation "Navigasi utama" [ref=f3e57]:
+        - button " Dashboard ROPN" [ref=f3e58] [cursor=pointer]:
+          - generic [ref=f3e59]: 
+          - generic [ref=f3e60]: Dashboard ROPN
+        - button " Dashboard SIMONIK" [ref=f3e61] [cursor=pointer]:
+          - generic [ref=f3e62]: 
+          - generic [ref=f3e63]: Dashboard SIMONIK
+        - generic [ref=f3e64]:
+          - button " Manajemen Kinerja " [expanded] [ref=f3e1033] [cursor=pointer]:
+            - generic [ref=f3e66]: 
+            - generic [ref=f3e67]: Manajemen Kinerja
+            - generic [ref=f3e68]: 
+          - generic [ref=f3e1034]:
+            - button "Manual IKU " [ref=f3e1035] [cursor=pointer]:
+              - generic [ref=f3e1036]: Manual IKU
+              - generic [ref=f3e1037]: 
+            - button "Perjanjian Kinerja " [ref=f3e1038] [cursor=pointer]:
+              - generic [ref=f3e1039]: Perjanjian Kinerja
+              - generic [ref=f3e1040]: 
+            - button "Manual Rincian Output & Komponen " [active] [ref=f3e1041] [cursor=pointer]:
+              - generic [ref=f3e1042]: Manual Rincian Output & Komponen
+              - generic [ref=f3e1043]: 
+        - button " Akun Saya" [ref=f3e69] [cursor=pointer]:
+          - generic [ref=f3e70]: 
+          - generic [ref=f3e71]: Akun Saya
+      - generic [ref=f3e72]:
+        - generic [ref=f3e73]:
+          - generic [ref=f3e74]: 
+          - generic [ref=f3e75]:
+            - generic [ref=f3e76]: Alur terintegrasi
+            - generic [ref=f3e77]: Renstra → Kinerja → Risiko → Monev
+        - button "Collapse sidebar" [ref=f3e78] [cursor=pointer]:
+          - generic [ref=f3e79]: 
+    - main [ref=f3e81]:
+      - generic [ref=f3e82]:
+        - text: 
+        - generic [ref=f3e83]:
+          - text: SISTEM MONITORING INFORMASI KINERJA KPK
+          - heading "Manajemen Kinerja" [level=1] [ref=f3e1298]
+          - paragraph [ref=f3e85]: Pengelolaan data kinerja dan risiko secara terintegrasi.
+        - generic [ref=f3e86]:
+          - generic [ref=f3e87]:
+            - generic [ref=f3e88]: 
+            - text: Sistem aktif
+          - generic [ref=f3e89]:
+            - generic [ref=f3e90]: MK
+            - generic [ref=f3e91]:
+              - generic [ref=f3e92]: Manajer Kinerja Demo
+              - generic [ref=f3e93]: Manajer Kinerja
+            - button "Keluar dari SIMONIK" [ref=f3e94] [cursor=pointer]:
+              - generic [ref=f3e95]: 
+      - generic [ref=f3e1299]:
+        - generic [ref=f3e1300]:
+          - generic [ref=f3e1301]: 
+          - generic [ref=f3e1303]:
+            - heading "Manual Rincian Output & Komponen" [level=2] [ref=f3e1304]
+            - paragraph [ref=f3e1305]: Mengelola klasifikasi rincian output, indikator, target, jenis, dan komponen.
+        - generic [ref=f3e1306]:
+          - generic [ref=f3e1307]:
+            - generic [ref=f3e1308]:
+              - generic [ref=f3e1309]: Form Rincian Output
+              - generic [ref=f3e1310]: 
+            - generic [ref=f3e1312]:
+              - generic [ref=f3e1313]:
+                - generic [ref=f3e1314]:
+                  - generic [ref=f3e1315]: Unit Kerja
+                  - combobox "Unit Kerja" [ref=f3e1316]:
+                    - option "Biro Hukum"
+                    - option "Biro Humas"
+                    - option "Biro Keuangan"
+                    - option "Biro SDM" [selected]
+                    - option "Biro Umum"
+                    - option "Deputi Bidang Informasi dan Data"
+                    - option "Deputi Bidang Koordinasi dan Supervisi"
+                    - option "Deputi Bidang Pencegahan dan Monitoring"
+                    - option "Deputi Bidang Pendidikan dan Peran Serta Masyarakat"
+                    - option "Deputi Bidang Penindakan dan Eksekusi"
+                    - option "Direktorat Antikorupsi Badan Usaha"
+                    - option "Direktorat Deteksi dan Analisis Korupsi"
+                    - option "Direktorat Gratifikasi dan Pelayanan Publik"
+                    - option "Direktorat Jejaring Pendidikan"
+                    - option "Direktorat Koordinasi dan Supervisi Wil I"
+                    - option "Direktorat Koordinasi dan Supervisi Wil II"
+                    - option "Direktorat Koordinasi dan Supervisi Wil III"
+                    - option "Direktorat Koordinasi dan Supervisi Wil IV"
+                    - option "Direktorat Koordinasi dan Supervisi Wil V"
+                    - option "Direktorat Manajemen Informasi"
+                    - option "Direktorat Monitoring"
+                    - option "Direktorat Pelacakan Aset, Pengelolaan Barang Bukti dan Eksekusi"
+                    - option "Direktorat Pelayanan Laporan dan Pengaduan Masyarakat"
+                    - option "Direktorat Pembinaan dan Peran Serta Masyarakat"
+                    - option "Direktorat Pembinaan Jaringan Kerjasama Antar Instansi dan Komisi"
+                    - option "Direktorat Pendidikan dan Pelatihan Antikorupsi"
+                    - option "Direktorat Penuntutan"
+                    - option "Direktorat Penyelidikan"
+                    - option "Direktorat Penyidikan"
+                    - option "Direktorat PP LHKPN"
+                    - option "Direktorat Sosialisasi dan Kampanye Antikorupsi"
+                    - option "Inspektorat"
+                    - option "Pusat Perencanaan Strategis PK"
+                    - option "Sekretariat Dewan Pengawas"
+                    - option "Sekretariat Jenderal"
+                - generic [ref=f3e1317]:
+                  - generic [ref=f3e1318]: Tahun
+                  - spinbutton "Tahun" [ref=f3e1319]: "2026"
+              - generic [ref=f3e1320]:
+                - generic [ref=f3e1321]: Klasifikasi Rincian Output
+                - textbox "Klasifikasi Rincian Output" [ref=f3e1322]:
+                  - /placeholder: Referensi SEB Menkeu & Bappenas
+              - generic [ref=f3e1323]:
+                - generic [ref=f3e1324]: Rincian Output
+                - textbox "Rincian Output" [ref=f3e1325]
+              - generic [ref=f3e1326]:
+                - generic [ref=f3e1327]: Indikator Rincian Output
+                - textbox "Indikator Rincian Output" [ref=f3e1328]
+              - generic [ref=f3e1329]:
+                - generic [ref=f3e1330]: Jenis Rincian Output
+                - combobox "Jenis Rincian Output" [ref=f3e1331]:
+                  - option "Prioritas Nasional" [selected]
+                  - option "Rutin"
+              - generic [ref=f3e1332]:
+                - generic [ref=f3e1333]:
+                  - generic [ref=f3e1334]: Target
+                  - spinbutton "Target" [ref=f3e1335]
+                - generic [ref=f3e1336]:
+                  - generic [ref=f3e1337]: Satuan
+                  - textbox "Satuan" [ref=f3e1338]
+              - generic [ref=f3e1339]:
+                - generic [ref=f3e1340]: Komponen
+                - textbox "Komponen" [ref=f3e1341]
+              - button "Simpan Rincian Output" [ref=f3e1342] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f3e1343]: 
+                - text: Simpan Rincian Output
+          - generic [ref=f3e1344]:
+            - generic [ref=f3e1345]:
+              - generic [ref=f3e1346]: Daftar Rincian Output
+              - generic [ref=f3e1347]: 
+            - table [ref=f3e1350]:
+              - rowgroup [ref=f3e1351]:
+                - row [ref=f3e1352]:
+                  - columnheader "Unit" [ref=f3e1353]
+                  - columnheader "Rincian Output" [ref=f3e1354]
+                  - columnheader "Jenis" [ref=f3e1355]
+                  - columnheader "Target" [ref=f3e1356]
+                  - columnheader "Komponen" [ref=f3e1357]
+                  - columnheader "Status" [ref=f3e1358]
+              - rowgroup [ref=f3e1359]:
+                - row [ref=f3e1360]:
+                  - cell "Pusat Perencanaan Strategis PK" [ref=f3e1361]
+                  - cell "tes" [ref=f3e1362]
+                  - cell "PRIORITAS_NASIONAL" [ref=f3e1363]
+                  - cell "100.000000" [ref=f3e1364]
+                  - cell "tes" [ref=f3e1365]
+                  - cell "DRAFT Review" [ref=f3e1366]:
+                    - generic [ref=f3e1367]:
+                      - generic [ref=f3e1368]: DRAFT
+                      - button "Review" [ref=f3e1369] [cursor=pointer]:
+                        - generic [aria-hidden] [ref=f3e1370]: 
+                        - text: Review
+  - generic [aria-hidden] [ref=f3e1022]: 73%

@@ -1,0 +1,105 @@
+- generic [ref=f3e1]:
+  - alert [ref=f3e47]
+  - generic [ref=f3e48]:
+    - complementary [ref=f3e49]:
+      - text: 
+      - generic [ref=f3e50]:
+        - generic [ref=f3e51]:
+          - generic [ref=f3e52]: S
+          - generic [ref=f3e53]:
+            - generic [ref=f3e54]: SIMONIK
+            - generic [ref=f3e55]: Monitoring Informasi Kinerja KPK
+        - generic [ref=f3e56]: MODUL
+      - navigation "Navigasi utama" [ref=f3e57]:
+        - button " Dashboard ROPN" [ref=f3e58] [cursor=pointer]:
+          - generic [ref=f3e59]: 
+          - generic [ref=f3e60]: Dashboard ROPN
+        - button " Dashboard SIMONIK" [ref=f3e61] [cursor=pointer]:
+          - generic [ref=f3e62]: 
+          - generic [ref=f3e63]: Dashboard SIMONIK
+        - generic [ref=f3e64]:
+          - button " Manajemen Kinerja " [expanded] [ref=f3e1033] [cursor=pointer]:
+            - generic [ref=f3e66]: 
+            - generic [ref=f3e67]: Manajemen Kinerja
+            - generic [ref=f3e68]: 
+          - generic [ref=f3e1034]:
+            - button "Manual IKU " [ref=f3e1035] [cursor=pointer]:
+              - generic [ref=f3e1036]: Manual IKU
+              - generic [ref=f3e1037]: 
+            - button "Perjanjian Kinerja " [active] [ref=f3e1038] [cursor=pointer]:
+              - generic [ref=f3e1039]: Perjanjian Kinerja
+              - generic [ref=f3e1040]: 
+            - button "Manual Rincian Output & Komponen " [ref=f3e1041] [cursor=pointer]:
+              - generic [ref=f3e1042]: Manual Rincian Output & Komponen
+              - generic [ref=f3e1043]: 
+        - button " Akun Saya" [ref=f3e69] [cursor=pointer]:
+          - generic [ref=f3e70]: 
+          - generic [ref=f3e71]: Akun Saya
+      - generic [ref=f3e72]:
+        - generic [ref=f3e73]:
+          - generic [ref=f3e74]: 
+          - generic [ref=f3e75]:
+            - generic [ref=f3e76]: Alur terintegrasi
+            - generic [ref=f3e77]: Renstra → Kinerja → Risiko → Monev
+        - button "Collapse sidebar" [ref=f3e78] [cursor=pointer]:
+          - generic [ref=f3e79]: 
+    - main [ref=f3e81]:
+      - generic [ref=f3e82]:
+        - text: 
+        - generic [ref=f3e83]:
+          - text: SISTEM MONITORING INFORMASI KINERJA KPK
+          - heading "Perjanjian Kinerja" [level=1] [ref=f3e1251]
+          - paragraph [ref=f3e85]: Pengelolaan data kinerja dan risiko secara terintegrasi.
+        - generic [ref=f3e86]:
+          - generic [ref=f3e87]:
+            - generic [ref=f3e88]: 
+            - text: Sistem aktif
+          - generic [ref=f3e89]:
+            - generic [ref=f3e90]: MK
+            - generic [ref=f3e91]:
+              - generic [ref=f3e92]: Manajer Kinerja Demo
+              - generic [ref=f3e93]: Manajer Kinerja
+            - button "Keluar dari SIMONIK" [ref=f3e94] [cursor=pointer]:
+              - generic [ref=f3e95]: 
+      - generic [ref=f3e1252]:
+        - generic [ref=f3e1253]:
+          - generic [ref=f3e1254]: 
+          - generic [ref=f3e1256]:
+            - heading "Perjanjian Kinerja" [level=2] [ref=f3e1257]
+            - paragraph [ref=f3e1258]: Daftar Perjanjian Kinerja berdasarkan tahun. Pengajuan dan konfirmasi dilakukan sekaligus untuk seluruh data pada tahun yang dipilih.
+        - generic [ref=f3e1259]:
+          - generic [ref=f3e1260]:
+            - generic [ref=f3e1261]: Daftar Perjanjian Kinerja
+            - generic [ref=f3e1262]: 
+          - generic [ref=f3e1263]:
+            - generic [ref=f3e1265]:
+              - generic [ref=f3e1266]: Filter Tahun
+              - spinbutton "Filter Tahun" [ref=f3e1267]: "2026"
+            - table [ref=f3e1269]:
+              - rowgroup [ref=f3e1270]:
+                - row [ref=f3e1271]:
+                  - columnheader "No." [ref=f3e1272]
+                  - columnheader "Unit Kerja" [ref=f3e1273]
+                  - columnheader "Sasaran Strategis" [ref=f3e1274]
+                  - columnheader "Indikator Kinerja" [ref=f3e1275]
+                  - columnheader "Target" [ref=f3e1276]
+                  - columnheader "Status" [ref=f3e1277]
+              - rowgroup [ref=f3e1278]:
+                - row [ref=f3e1279]:
+                  - cell "1" [ref=f3e1280]
+                  - cell "Biro SDM" [ref=f3e1281]
+                  - cell "Kasus Korupsi Menurun" [ref=f3e1282]
+                  - cell "Evaluasi Rutin terhadap korupsi" [ref=f3e1283]
+                  - cell "1 (indeks)" [ref=f3e1284]
+                  - cell "REVIEWED" [ref=f3e1285]
+                - row [ref=f3e1287]:
+                  - cell "2" [ref=f3e1288]
+                  - cell "Biro SDM" [ref=f3e1289]
+                  - cell "Pendidikan Anti Korupsi" [ref=f3e1290]
+                  - cell "Meningkatnya masyarakat yang sadar anti korupsi" [ref=f3e1291]
+                  - cell "100 (persentase)" [ref=f3e1292]
+                  - cell "REVIEWED" [ref=f3e1293]
+            - button "Ajukan" [disabled] [ref=f3e1296]:
+              - generic [aria-hidden] [ref=f3e1297]: 
+              - text: Ajukan
+  - generic [aria-hidden] [ref=f3e1022]: 73%

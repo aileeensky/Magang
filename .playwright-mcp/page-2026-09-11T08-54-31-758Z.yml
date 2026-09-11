@@ -1,0 +1,573 @@
+- generic [ref=f14e1]:
+  - alert [ref=f14e47]
+  - generic [ref=f14e48]:
+    - complementary [ref=f14e49]:
+      - text: 
+      - generic [ref=f14e50]:
+        - generic [ref=f14e51]:
+          - generic [ref=f14e52]: S
+          - generic [ref=f14e53]:
+            - generic [ref=f14e54]: SIMONIK
+            - generic [ref=f14e55]: Monitoring Informasi Kinerja KPK
+        - generic [ref=f14e56]: MODUL
+      - navigation "Navigasi utama" [ref=f14e57]:
+        - button " Dashboard ROPN" [ref=f14e58] [cursor=pointer]:
+          - generic [ref=f14e59]: 
+          - generic [ref=f14e60]: Dashboard ROPN
+        - button " Dashboard SIMONIK" [ref=f14e61] [cursor=pointer]:
+          - generic [ref=f14e62]: 
+          - generic [ref=f14e63]: Dashboard SIMONIK
+        - generic [ref=f14e64]:
+          - button " Manajemen Risiko " [expanded] [active] [ref=f14e1036] [cursor=pointer]:
+            - generic [ref=f14e66]: 
+            - generic [ref=f14e67]: Manajemen Risiko
+            - generic [ref=f14e68]: 
+          - generic [ref=f14e1037]:
+            - button "Lingkup, Konteks & Kriteria " [ref=f14e1038] [cursor=pointer]:
+              - generic [ref=f14e1039]: Lingkup, Konteks & Kriteria
+              - generic [ref=f14e1040]: 
+            - button "Penilaian Risiko " [ref=f14e1041] [cursor=pointer]:
+              - generic [ref=f14e1042]: Penilaian Risiko
+              - generic [ref=f14e1043]: 
+            - button "Indikator Risiko Utama " [ref=f14e1044] [cursor=pointer]:
+              - generic [ref=f14e1045]: Indikator Risiko Utama
+              - generic [ref=f14e1046]: 
+            - button "Perlakuan Risiko " [ref=f14e1047] [cursor=pointer]:
+              - generic [ref=f14e1048]: Perlakuan Risiko
+              - generic [ref=f14e1049]: 
+        - button " Monitoring & Reviu" [ref=f14e69] [cursor=pointer]:
+          - generic [ref=f14e70]: 
+          - generic [ref=f14e71]: Monitoring & Reviu
+        - button " Akun Saya" [ref=f14e72] [cursor=pointer]:
+          - generic [ref=f14e73]: 
+          - generic [ref=f14e74]: Akun Saya
+      - generic [ref=f14e75]:
+        - generic [ref=f14e76]:
+          - generic [ref=f14e77]: 
+          - generic [ref=f14e78]:
+            - generic [ref=f14e79]: Alur terintegrasi
+            - generic [ref=f14e80]: Renstra → Kinerja → Risiko → Monev
+        - button "Collapse sidebar" [ref=f14e81] [cursor=pointer]:
+          - generic [ref=f14e82]: 
+    - main [ref=f14e84]:
+      - generic [ref=f14e85]:
+        - text: 
+        - generic [ref=f14e86]:
+          - text: SISTEM MONITORING INFORMASI KINERJA KPK
+          - heading "Dashboard ROPN" [level=1] [ref=f14e87]
+          - paragraph [ref=f14e88]: Pengelolaan data kinerja dan risiko secara terintegrasi.
+        - generic [ref=f14e89]:
+          - generic [ref=f14e90]:
+            - generic [ref=f14e91]: 
+            - text: Sistem aktif
+          - generic [ref=f14e92]:
+            - generic [ref=f14e93]: MR
+            - generic [ref=f14e94]:
+              - generic [ref=f14e95]: Manajer Risiko Demo
+              - generic [ref=f14e96]: Manajer Risiko
+            - button "Keluar dari SIMONIK" [ref=f14e97] [cursor=pointer]:
+              - generic [ref=f14e98]: 
+      - generic [ref=f14e99]:
+        - heading "🔎 Filter Dashboard" [level=2] [ref=f14e100]
+        - generic [ref=f14e101]:
+          - generic [ref=f14e102]:
+            - generic [ref=f14e103]:
+              - generic [ref=f14e104]: 
+              - text: Tahun
+            - generic [ref=f14e105]:
+              - button " Tahun" [ref=f14e106] [cursor=pointer]:
+                - generic [ref=f14e107]:
+                  - generic [ref=f14e108]: 
+                  - generic [ref=f14e109]: "2026"
+              - text:   
+          - generic [ref=f14e111]:
+            - text: Unit
+            - combobox "Unit" [ref=f14e112]:
+              - option "Semua Unit" [selected]
+              - option "AKBU"
+              - option "DMI"
+              - option "DNA"
+              - option "Diklat ACLC"
+              - option "Jardik"
+              - option "Monitoring"
+              - option "PJKAKI"
+              - option "Penyidikan"
+              - option "Pusrenstra"
+              - option "Soskam"
+        - heading "📌 Ringkasan Eksekutif" [level=2] [ref=f14e113]
+        - generic [ref=f14e114]:
+          - generic [ref=f14e115]:
+            - generic [ref=f14e116]: TAHUN
+            - generic [ref=f14e117]: "2026"
+          - generic [ref=f14e119]:
+            - generic [ref=f14e120]: ROPN
+            - generic [ref=f14e121]: "15"
+          - generic [ref=f14e123]:
+            - generic [ref=f14e124]: KINERJA
+            - generic [ref=f14e125]: 27.9%
+          - generic [ref=f14e127]:
+            - generic [ref=f14e128]: ANGGARAN
+            - generic [ref=f14e129]: 23.6%
+        - heading "📈 Analisis Tahun Terpilih" [level=2] [ref=f14e131]
+        - generic [ref=f14e132]:
+          - generic [ref=f14e133]:
+            - generic [ref=f14e134]: Grafik ROPN
+            - generic [ref=f14e135]:
+              - button "Kinerja" [ref=f14e136] [cursor=pointer]
+              - button "Anggaran" [ref=f14e137] [cursor=pointer]
+          - generic [ref=f14e140]:
+            - img [ref=f14e141]:
+              - generic [ref=f14e145]:
+                - generic [ref=f14e146]: TW I
+                - generic [ref=f14e148]: TW II
+                - generic [ref=f14e150]: TW III
+                - generic [ref=f14e152]: TW IV
+              - generic [ref=f14e155]:
+                - generic [ref=f14e156]: 0%
+                - generic [ref=f14e158]: 25%
+                - generic [ref=f14e160]: 50%
+                - generic [ref=f14e162]: 75%
+                - generic [ref=f14e164]: 100%
+            - list [ref=f14e171]:
+              - listitem [ref=f14e172]: Kinerja 2026
+              - listitem [ref=f14e175]: Anggaran 2026
+        - generic [ref=f14e178]:
+          - generic [ref=f14e179]:
+            - heading "5 ROPN Kinerja Terendah — TW II" [level=3] [ref=f14e180]
+            - img [ref=f14e184]:
+              - generic [ref=f14e188]:
+                - generic [ref=f14e189]: 0%
+                - generic [ref=f14e191]: 25%
+                - generic [ref=f14e193]: 50%
+                - generic [ref=f14e195]: 75%
+                - generic [ref=f14e197]: 100%
+              - generic [ref=f14e200]:
+                - generic [ref=f14e201]: DokumenPerancangan,K...
+                - generic [ref=f14e203]: PengembanganDigitalis...
+                - generic [ref=f14e205]: SistemAplikasiDeteks...
+                - generic [ref=f14e207]: MonitoringPusat Data...
+                - generic [ref=f14e209]: PenyusunanGrandDesig...
+              - generic [ref=f14e223]:
+                - generic [ref=f14e224]: 8.0%
+                - generic [ref=f14e225]: 10.0%
+                - generic [ref=f14e226]: 10.0%
+                - generic [ref=f14e227]: 15.0%
+                - generic [ref=f14e228]: 18.0%
+          - generic [ref=f14e229]:
+            - heading "5 ROPN Anggaran Terendah — TW II" [level=3] [ref=f14e230]
+            - img [ref=f14e234]:
+              - generic [ref=f14e238]:
+                - generic [ref=f14e239]: 0%
+                - generic [ref=f14e241]: 25%
+                - generic [ref=f14e243]: 50%
+                - generic [ref=f14e245]: 75%
+                - generic [ref=f14e247]: 100%
+              - generic [ref=f14e250]:
+                - generic [ref=f14e251]: DokumenPerancangan,K...
+                - generic [ref=f14e253]: PengembanganDigitalis...
+                - generic [ref=f14e255]: SistemAplikasiDeteks...
+                - generic [ref=f14e257]: RekomendasiKebijakan...
+                - generic [ref=f14e259]: RekomendasiKebijakan...
+              - generic [ref=f14e262]:
+                - generic [ref=f14e263]: 0.0%
+                - generic [ref=f14e264]: 0.0%
+                - generic [ref=f14e265]: 0.0%
+                - generic [ref=f14e266]: 0.0%
+                - generic [ref=f14e267]: 0.0%
+        - generic [ref=f14e268]:
+          - heading "🔎 Detail ROPN" [level=2] [ref=f14e269]
+          - generic [ref=f14e270]:
+            - text: Pilih ROPN
+            - combobox "Pilih ROPN" [ref=f14e271]:
+              - option "Semua ROPN" [selected]
+              - option "Dokumen Perancangan, Kajian, Konsep, Panduan Manajemen Risiko Kecurangan pada Layanan Pemerintah"
+              - option "Fasilitasi dan pembinaan implementasi pendidikan Antikorupsi pada Pendidikan Dasar, menengah, Tinggi, ASN melalui Pemberdayaan Jejaring Pendidikan Berbasis Bukti"
+              - option "Kampanye (Digital dan Non Digital) Nilai Antikorupsi"
+              - option "Layanan Penyidikan Perkara TPPU"
+              - option "Monitoring Pusat Data Analitik Pemberantasan Korupsi"
+              - option "Pelatihan Integritas ASN dan APH"
+              - option "Pelatihan Penguatan Integritas untuk Masyarakat Umum, Badan Usaha dan Legislatif"
+              - option "Pengembangan Digitalisasi dan AI-Machine Learning LHKPN"
+              - option "Penyusunan Grand Design Tata Kelola ACLC KPK Tahun 2026-2029"
+              - option "Penyusunan Roadmap dan Rencana Aksi Penguatan Sistem Antikorupsi (Budaya, Antikorupsi, Pencegahan, Pemberantasan Tipikor dan Asset Recovery)"
+              - option "Rekomendasi Kebijakan Integrasi Pencegahan Korupsi di K/L dan Stranas PK"
+              - option "Rekomendasi Kebijakan Korupsi Sektor Swasta"
+              - option "Rekomendasi Kebijakan Pemenuhan Kewajiban Indonesia untuk Aksesi Konvensi Anti-Suap OECD"
+              - option "Rekomendasi Kebijakan terhadap Rancangan Undang-Undang tentang Kegiatan Lobi"
+              - option "Sistem Aplikasi Deteksi Kecurangan pada Layanan Strategis Pemerintah"
+          - generic [ref=f14e272]:
+            - generic [ref=f14e273]: Tahun 2026
+            - generic [ref=f14e274]:
+              - generic [ref=f14e275]:
+                - heading "Dokumen Perancangan, Kajian, Konsep, Pandu..." [level=3] [ref=f14e276]
+                - img [ref=f14e279]:
+                  - generic [ref=f14e283]:
+                    - generic [ref=f14e284]: TW I
+                    - generic [ref=f14e286]: TW II
+                    - generic [ref=f14e288]: TW III
+                    - generic [ref=f14e290]: TW IV
+                  - generic [ref=f14e293]:
+                    - generic [ref=f14e294]: 0%
+                    - generic [ref=f14e296]: 25%
+                    - generic [ref=f14e298]: 50%
+                    - generic [ref=f14e300]: 75%
+                    - generic [ref=f14e302]: 100%
+                  - generic [ref=f14e310]:
+                    - generic [ref=f14e311]: 5%
+                    - generic [ref=f14e312]: 8%
+                    - generic [ref=f14e313]: 0%
+                    - generic [ref=f14e314]: 0%
+                  - generic [ref=f14e316]:
+                    - generic [ref=f14e317]: 0%
+                    - generic [ref=f14e318]: 0%
+                    - generic [ref=f14e319]: 0%
+                    - generic [ref=f14e320]: 0%
+              - generic [ref=f14e321]:
+                - heading "Fasilitasi dan pembinaan implementasi pend..." [level=3] [ref=f14e322]
+                - img [ref=f14e325]:
+                  - generic [ref=f14e329]:
+                    - generic [ref=f14e330]: TW I
+                    - generic [ref=f14e332]: TW II
+                    - generic [ref=f14e334]: TW III
+                    - generic [ref=f14e336]: TW IV
+                  - generic [ref=f14e339]:
+                    - generic [ref=f14e340]: 0%
+                    - generic [ref=f14e342]: 25%
+                    - generic [ref=f14e344]: 50%
+                    - generic [ref=f14e346]: 75%
+                    - generic [ref=f14e348]: 100%
+                  - generic [ref=f14e356]:
+                    - generic [ref=f14e357]: 10%
+                    - generic [ref=f14e358]: 30%
+                    - generic [ref=f14e359]: 0%
+                    - generic [ref=f14e360]: 0%
+                  - generic [ref=f14e367]:
+                    - generic [ref=f14e368]: 16%
+                    - generic [ref=f14e369]: 46%
+                    - generic [ref=f14e370]: 0%
+                    - generic [ref=f14e371]: 0%
+              - generic [ref=f14e372]:
+                - heading "Kampanye (Digital dan Non Digital) Nilai A..." [level=3] [ref=f14e373]
+                - img [ref=f14e376]:
+                  - generic [ref=f14e380]:
+                    - generic [ref=f14e381]: TW I
+                    - generic [ref=f14e383]: TW II
+                    - generic [ref=f14e385]: TW III
+                    - generic [ref=f14e387]: TW IV
+                  - generic [ref=f14e390]:
+                    - generic [ref=f14e391]: 0%
+                    - generic [ref=f14e393]: 25%
+                    - generic [ref=f14e395]: 50%
+                    - generic [ref=f14e397]: 75%
+                    - generic [ref=f14e399]: 100%
+                  - generic [ref=f14e407]:
+                    - generic [ref=f14e408]: 10%
+                    - generic [ref=f14e409]: 40%
+                    - generic [ref=f14e410]: 0%
+                    - generic [ref=f14e411]: 0%
+                  - generic [ref=f14e418]:
+                    - generic [ref=f14e419]: 35%
+                    - generic [ref=f14e420]: 67%
+                    - generic [ref=f14e421]: 0%
+                    - generic [ref=f14e422]: 0%
+              - generic [ref=f14e423]:
+                - heading "Layanan Penyidikan Perkara TPPU" [level=3] [ref=f14e424]
+                - img [ref=f14e427]:
+                  - generic [ref=f14e431]:
+                    - generic [ref=f14e432]: TW I
+                    - generic [ref=f14e434]: TW II
+                    - generic [ref=f14e436]: TW III
+                    - generic [ref=f14e438]: TW IV
+                  - generic [ref=f14e441]:
+                    - generic [ref=f14e442]: 0%
+                    - generic [ref=f14e444]: 25%
+                    - generic [ref=f14e446]: 50%
+                    - generic [ref=f14e448]: 75%
+                    - generic [ref=f14e450]: 100%
+                  - generic [ref=f14e458]:
+                    - generic [ref=f14e459]: 5%
+                    - generic [ref=f14e460]: 20%
+                    - generic [ref=f14e461]: 0%
+                    - generic [ref=f14e462]: 0%
+                  - generic [ref=f14e469]:
+                    - generic [ref=f14e470]: 1%
+                    - generic [ref=f14e471]: 2%
+                    - generic [ref=f14e472]: 0%
+                    - generic [ref=f14e473]: 0%
+              - generic [ref=f14e474]:
+                - heading "Monitoring Pusat Data Analitik Pemberantas..." [level=3] [ref=f14e475]
+                - img [ref=f14e478]:
+                  - generic [ref=f14e482]:
+                    - generic [ref=f14e483]: TW I
+                    - generic [ref=f14e485]: TW II
+                    - generic [ref=f14e487]: TW III
+                    - generic [ref=f14e489]: TW IV
+                  - generic [ref=f14e492]:
+                    - generic [ref=f14e493]: 0%
+                    - generic [ref=f14e495]: 25%
+                    - generic [ref=f14e497]: 50%
+                    - generic [ref=f14e499]: 75%
+                    - generic [ref=f14e501]: 100%
+                  - generic [ref=f14e509]:
+                    - generic [ref=f14e510]: 5%
+                    - generic [ref=f14e511]: 15%
+                    - generic [ref=f14e512]: 0%
+                    - generic [ref=f14e513]: 0%
+                  - generic [ref=f14e520]:
+                    - generic [ref=f14e521]: 0%
+                    - generic [ref=f14e522]: 2%
+                    - generic [ref=f14e523]: 0%
+                    - generic [ref=f14e524]: 0%
+              - generic [ref=f14e525]:
+                - heading "Pelatihan Integritas ASN dan APH" [level=3] [ref=f14e526]
+                - img [ref=f14e529]:
+                  - generic [ref=f14e533]:
+                    - generic [ref=f14e534]: TW I
+                    - generic [ref=f14e536]: TW II
+                    - generic [ref=f14e538]: TW III
+                    - generic [ref=f14e540]: TW IV
+                  - generic [ref=f14e543]:
+                    - generic [ref=f14e544]: 0%
+                    - generic [ref=f14e546]: 25%
+                    - generic [ref=f14e548]: 50%
+                    - generic [ref=f14e550]: 75%
+                    - generic [ref=f14e552]: 100%
+                  - generic [ref=f14e560]:
+                    - generic [ref=f14e561]: 17%
+                    - generic [ref=f14e562]: 44%
+                    - generic [ref=f14e563]: 0%
+                    - generic [ref=f14e564]: 0%
+                  - generic [ref=f14e571]:
+                    - generic [ref=f14e572]: 13%
+                    - generic [ref=f14e573]: 41%
+                    - generic [ref=f14e574]: 0%
+                    - generic [ref=f14e575]: 0%
+              - generic [ref=f14e576]:
+                - heading "Pelatihan Penguatan Integritas untuk Masya..." [level=3] [ref=f14e577]
+                - img [ref=f14e580]:
+                  - generic [ref=f14e584]:
+                    - generic [ref=f14e585]: TW I
+                    - generic [ref=f14e587]: TW II
+                    - generic [ref=f14e589]: TW III
+                    - generic [ref=f14e591]: TW IV
+                  - generic [ref=f14e594]:
+                    - generic [ref=f14e595]: 0%
+                    - generic [ref=f14e597]: 25%
+                    - generic [ref=f14e599]: 50%
+                    - generic [ref=f14e601]: 75%
+                    - generic [ref=f14e603]: 100%
+                  - generic [ref=f14e611]:
+                    - generic [ref=f14e612]: 7%
+                    - generic [ref=f14e613]: 40%
+                    - generic [ref=f14e614]: 0%
+                    - generic [ref=f14e615]: 0%
+                  - generic [ref=f14e622]:
+                    - generic [ref=f14e623]: 5%
+                    - generic [ref=f14e624]: 52%
+                    - generic [ref=f14e625]: 0%
+                    - generic [ref=f14e626]: 0%
+              - generic [ref=f14e627]:
+                - heading "Pengembangan Digitalisasi dan AI-Machine L..." [level=3] [ref=f14e628]
+                - img [ref=f14e631]:
+                  - generic [ref=f14e635]:
+                    - generic [ref=f14e636]: TW I
+                    - generic [ref=f14e638]: TW II
+                    - generic [ref=f14e640]: TW III
+                    - generic [ref=f14e642]: TW IV
+                  - generic [ref=f14e645]:
+                    - generic [ref=f14e646]: 0%
+                    - generic [ref=f14e648]: 25%
+                    - generic [ref=f14e650]: 50%
+                    - generic [ref=f14e652]: 75%
+                    - generic [ref=f14e654]: 100%
+                  - generic [ref=f14e662]:
+                    - generic [ref=f14e663]: 1%
+                    - generic [ref=f14e664]: 10%
+                    - generic [ref=f14e665]: 0%
+                    - generic [ref=f14e666]: 0%
+                  - generic [ref=f14e668]:
+                    - generic [ref=f14e669]: 0%
+                    - generic [ref=f14e670]: 0%
+                    - generic [ref=f14e671]: 0%
+                    - generic [ref=f14e672]: 0%
+              - generic [ref=f14e673]:
+                - heading "Penyusunan Grand Design Tata Kelola ACLC K..." [level=3] [ref=f14e674]
+                - img [ref=f14e677]:
+                  - generic [ref=f14e681]:
+                    - generic [ref=f14e682]: TW I
+                    - generic [ref=f14e684]: TW II
+                    - generic [ref=f14e686]: TW III
+                    - generic [ref=f14e688]: TW IV
+                  - generic [ref=f14e691]:
+                    - generic [ref=f14e692]: 0%
+                    - generic [ref=f14e694]: 25%
+                    - generic [ref=f14e696]: 50%
+                    - generic [ref=f14e698]: 75%
+                    - generic [ref=f14e700]: 100%
+                  - generic [ref=f14e708]:
+                    - generic [ref=f14e709]: 8%
+                    - generic [ref=f14e710]: 18%
+                    - generic [ref=f14e711]: 0%
+                    - generic [ref=f14e712]: 0%
+                  - generic [ref=f14e719]:
+                    - generic [ref=f14e720]: 12%
+                    - generic [ref=f14e721]: 36%
+                    - generic [ref=f14e722]: 0%
+                    - generic [ref=f14e723]: 0%
+              - generic [ref=f14e724]:
+                - heading "Penyusunan Roadmap dan Rencana Aksi Pengua..." [level=3] [ref=f14e725]
+                - img [ref=f14e728]:
+                  - generic [ref=f14e732]:
+                    - generic [ref=f14e733]: TW I
+                    - generic [ref=f14e735]: TW II
+                    - generic [ref=f14e737]: TW III
+                    - generic [ref=f14e739]: TW IV
+                  - generic [ref=f14e742]:
+                    - generic [ref=f14e743]: 0%
+                    - generic [ref=f14e745]: 25%
+                    - generic [ref=f14e747]: 50%
+                    - generic [ref=f14e749]: 75%
+                    - generic [ref=f14e751]: 100%
+                  - generic [ref=f14e759]:
+                    - generic [ref=f14e760]: 15%
+                    - generic [ref=f14e761]: 43%
+                    - generic [ref=f14e762]: 0%
+                    - generic [ref=f14e763]: 0%
+                  - generic [ref=f14e770]:
+                    - generic [ref=f14e771]: 11%
+                    - generic [ref=f14e772]: 12%
+                    - generic [ref=f14e773]: 0%
+                    - generic [ref=f14e774]: 0%
+              - generic [ref=f14e775]:
+                - heading "Rekomendasi Kebijakan Integrasi Pencegahan..." [level=3] [ref=f14e776]
+                - img [ref=f14e779]:
+                  - generic [ref=f14e783]:
+                    - generic [ref=f14e784]: TW I
+                    - generic [ref=f14e786]: TW II
+                    - generic [ref=f14e788]: TW III
+                    - generic [ref=f14e790]: TW IV
+                  - generic [ref=f14e793]:
+                    - generic [ref=f14e794]: 0%
+                    - generic [ref=f14e796]: 25%
+                    - generic [ref=f14e798]: 50%
+                    - generic [ref=f14e800]: 75%
+                    - generic [ref=f14e802]: 100%
+                  - generic [ref=f14e810]:
+                    - generic [ref=f14e811]: 5%
+                    - generic [ref=f14e812]: 25%
+                    - generic [ref=f14e813]: 0%
+                    - generic [ref=f14e814]: 0%
+                  - generic [ref=f14e816]:
+                    - generic [ref=f14e817]: 0%
+                    - generic [ref=f14e818]: 0%
+                    - generic [ref=f14e819]: 0%
+                    - generic [ref=f14e820]: 0%
+              - generic [ref=f14e821]:
+                - heading "Rekomendasi Kebijakan Korupsi Sektor Swasta" [level=3] [ref=f14e822]
+                - img [ref=f14e825]:
+                  - generic [ref=f14e829]:
+                    - generic [ref=f14e830]: TW I
+                    - generic [ref=f14e832]: TW II
+                    - generic [ref=f14e834]: TW III
+                    - generic [ref=f14e836]: TW IV
+                  - generic [ref=f14e839]:
+                    - generic [ref=f14e840]: 0%
+                    - generic [ref=f14e842]: 25%
+                    - generic [ref=f14e844]: 50%
+                    - generic [ref=f14e846]: 75%
+                    - generic [ref=f14e848]: 100%
+                  - generic [ref=f14e856]:
+                    - generic [ref=f14e857]: 15%
+                    - generic [ref=f14e858]: 25%
+                    - generic [ref=f14e859]: 0%
+                    - generic [ref=f14e860]: 0%
+                  - generic [ref=f14e867]:
+                    - generic [ref=f14e868]: 20%
+                    - generic [ref=f14e869]: 23%
+                    - generic [ref=f14e870]: 0%
+                    - generic [ref=f14e871]: 0%
+              - generic [ref=f14e872]:
+                - heading "Rekomendasi Kebijakan Pemenuhan Kewajiban..." [level=3] [ref=f14e873]
+                - img [ref=f14e876]:
+                  - generic [ref=f14e880]:
+                    - generic [ref=f14e881]: TW I
+                    - generic [ref=f14e883]: TW II
+                    - generic [ref=f14e885]: TW III
+                    - generic [ref=f14e887]: TW IV
+                  - generic [ref=f14e890]:
+                    - generic [ref=f14e891]: 0%
+                    - generic [ref=f14e893]: 25%
+                    - generic [ref=f14e895]: 50%
+                    - generic [ref=f14e897]: 75%
+                    - generic [ref=f14e899]: 100%
+                  - generic [ref=f14e907]:
+                    - generic [ref=f14e908]: 29%
+                    - generic [ref=f14e909]: 65%
+                    - generic [ref=f14e910]: 0%
+                    - generic [ref=f14e911]: 0%
+                  - generic [ref=f14e918]:
+                    - generic [ref=f14e919]: 46%
+                    - generic [ref=f14e920]: 73%
+                    - generic [ref=f14e921]: 0%
+                    - generic [ref=f14e922]: 0%
+              - generic [ref=f14e923]:
+                - heading "Rekomendasi Kebijakan terhadap Rancangan U..." [level=3] [ref=f14e924]
+                - img [ref=f14e927]:
+                  - generic [ref=f14e931]:
+                    - generic [ref=f14e932]: TW I
+                    - generic [ref=f14e934]: TW II
+                    - generic [ref=f14e936]: TW III
+                    - generic [ref=f14e938]: TW IV
+                  - generic [ref=f14e941]:
+                    - generic [ref=f14e942]: 0%
+                    - generic [ref=f14e944]: 25%
+                    - generic [ref=f14e946]: 50%
+                    - generic [ref=f14e948]: 75%
+                    - generic [ref=f14e950]: 100%
+                  - generic [ref=f14e958]:
+                    - generic [ref=f14e959]: 5%
+                    - generic [ref=f14e960]: 25%
+                    - generic [ref=f14e961]: 0%
+                    - generic [ref=f14e962]: 0%
+                  - generic [ref=f14e964]:
+                    - generic [ref=f14e965]: 0%
+                    - generic [ref=f14e966]: 0%
+                    - generic [ref=f14e967]: 0%
+                    - generic [ref=f14e968]: 0%
+              - generic [ref=f14e969]:
+                - heading "Sistem Aplikasi Deteksi Kecurangan pada La..." [level=3] [ref=f14e970]
+                - img [ref=f14e973]:
+                  - generic [ref=f14e977]:
+                    - generic [ref=f14e978]: TW I
+                    - generic [ref=f14e980]: TW II
+                    - generic [ref=f14e982]: TW III
+                    - generic [ref=f14e984]: TW IV
+                  - generic [ref=f14e987]:
+                    - generic [ref=f14e988]: 0%
+                    - generic [ref=f14e990]: 25%
+                    - generic [ref=f14e992]: 50%
+                    - generic [ref=f14e994]: 75%
+                    - generic [ref=f14e996]: 100%
+                  - generic [ref=f14e1004]:
+                    - generic [ref=f14e1005]: 5%
+                    - generic [ref=f14e1006]: 10%
+                    - generic [ref=f14e1007]: 0%
+                    - generic [ref=f14e1008]: 0%
+                  - generic [ref=f14e1010]:
+                    - generic [ref=f14e1011]: 0%
+                    - generic [ref=f14e1012]: 0%
+                    - generic [ref=f14e1013]: 0%
+                    - generic [ref=f14e1014]: 0%
+        - generic [ref=f14e1015]:
+          - heading "💡 Ringkasan Manajemen" [level=2] [ref=f14e1016]
+          - generic [ref=f14e1018]:
+            - generic [ref=f14e1019]: Tahun 2026 - TW II
+            - generic [ref=f14e1020]:
+              - generic [ref=f14e1021]: 📈
+              - generic [ref=f14e1022]:
+                - text: Capaian kinerja tercatat sebesar
+                - strong [ref=f14e1023]: 27.9%
+                - text: dengan realisasi anggaran sebesar
+                - strong [ref=f14e1024]: 23.6%
+                - text: .
+  - generic [aria-hidden] [ref=f14e1025]: 73%

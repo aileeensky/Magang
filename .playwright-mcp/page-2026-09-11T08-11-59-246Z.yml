@@ -1,0 +1,168 @@
+- generic [active] [ref=f5e1]:
+  - alert [ref=f5e47]
+  - generic [ref=f5e48]:
+    - complementary [ref=f5e49]:
+      - text: 
+      - generic [ref=f5e50]:
+        - generic [ref=f5e51]:
+          - generic [ref=f5e52]: S
+          - generic [ref=f5e53]:
+            - generic [ref=f5e54]: SIMONIK
+            - generic [ref=f5e55]: Monitoring Informasi Kinerja KPK
+        - generic [ref=f5e56]: MODUL
+      - navigation "Navigasi utama" [ref=f5e57]:
+        - button " Dashboard ROPN" [ref=f5e58] [cursor=pointer]:
+          - generic [ref=f5e59]: 
+          - generic [ref=f5e60]: Dashboard ROPN
+        - button " Dashboard SIMONIK" [ref=f5e61] [cursor=pointer]:
+          - generic [ref=f5e62]: 
+          - generic [ref=f5e63]: Dashboard SIMONIK
+        - button " Perencanaan Strategis " [ref=f5e65] [cursor=pointer]:
+          - generic [ref=f5e66]: 
+          - generic [ref=f5e67]: Perencanaan Strategis
+          - generic [ref=f5e68]: 
+        - button " Manajemen Kinerja " [ref=f5e70] [cursor=pointer]:
+          - generic [ref=f5e71]: 
+          - generic [ref=f5e72]: Manajemen Kinerja
+          - generic [ref=f5e73]: 
+        - button " Manajemen Risiko " [ref=f5e75] [cursor=pointer]:
+          - generic [ref=f5e76]: 
+          - generic [ref=f5e77]: Manajemen Risiko
+          - generic [ref=f5e78]: 
+        - button " Monitoring & Reviu" [ref=f5e79] [cursor=pointer]:
+          - generic [ref=f5e80]: 
+          - generic [ref=f5e81]: Monitoring & Reviu
+        - button " Akun Saya" [ref=f5e82] [cursor=pointer]:
+          - generic [ref=f5e83]: 
+          - generic [ref=f5e84]: Akun Saya
+      - generic [ref=f5e85]:
+        - generic [ref=f5e86]:
+          - generic [ref=f5e87]: 
+          - generic [ref=f5e88]:
+            - generic [ref=f5e89]: Alur terintegrasi
+            - generic [ref=f5e90]: Renstra → Kinerja → Risiko → Monev
+        - button "Collapse sidebar" [ref=f5e91] [cursor=pointer]:
+          - generic [ref=f5e92]: 
+    - main [ref=f5e94]:
+      - generic [ref=f5e95]:
+        - text: 
+        - generic [ref=f5e96]:
+          - text: SISTEM MONITORING INFORMASI KINERJA KPK
+          - heading "Manajemen Risiko" [level=1] [ref=f5e97]
+          - paragraph [ref=f5e98]: Pengelolaan data kinerja dan risiko secara terintegrasi.
+        - generic [ref=f5e99]:
+          - generic [ref=f5e100]:
+            - generic [ref=f5e101]: 
+            - text: Sistem aktif
+          - generic [ref=f5e102]:
+            - generic [ref=f5e103]: PU
+            - generic [ref=f5e104]:
+              - generic [ref=f5e105]: Pimpinan Unit Demo
+              - generic [ref=f5e106]: Pimpinan Unit Kerja
+            - button "Keluar dari SIMONIK" [ref=f5e107] [cursor=pointer]:
+              - generic [ref=f5e108]: 
+      - generic [ref=f5e109]:
+        - generic [ref=f5e110]:
+          - generic [ref=f5e111]: 
+          - generic [ref=f5e113]:
+            - heading "Lingkup, Konteks & Kriteria" [level=2] [ref=f5e114]
+            - paragraph [ref=f5e115]: LKK disusun dari Manual IKU yang telah disetujui kedua pihak.
+        - generic [ref=f5e116]:
+          - generic [ref=f5e117]:
+            - generic [ref=f5e118]:
+              - generic [ref=f5e119]: Form LKK
+              - generic [ref=f5e120]: 
+            - generic [ref=f5e122]:
+              - generic [ref=f5e123]:
+                - generic [ref=f5e124]: Unit Kerja
+                - combobox "Unit Kerja" [ref=f5e125]:
+                  - option "Biro Hukum"
+                  - option "Biro Humas"
+                  - option "Biro Keuangan"
+                  - option "Biro SDM" [selected]
+                  - option "Biro Umum"
+                  - option "Deputi Bidang Informasi dan Data"
+                  - option "Deputi Bidang Koordinasi dan Supervisi"
+                  - option "Deputi Bidang Pencegahan dan Monitoring"
+                  - option "Deputi Bidang Pendidikan dan Peran Serta Masyarakat"
+                  - option "Deputi Bidang Penindakan dan Eksekusi"
+                  - option "Direktorat Antikorupsi Badan Usaha"
+                  - option "Direktorat Deteksi dan Analisis Korupsi"
+                  - option "Direktorat Gratifikasi dan Pelayanan Publik"
+                  - option "Direktorat Jejaring Pendidikan"
+                  - option "Direktorat Koordinasi dan Supervisi Wil I"
+                  - option "Direktorat Koordinasi dan Supervisi Wil II"
+                  - option "Direktorat Koordinasi dan Supervisi Wil III"
+                  - option "Direktorat Koordinasi dan Supervisi Wil IV"
+                  - option "Direktorat Koordinasi dan Supervisi Wil V"
+                  - option "Direktorat Manajemen Informasi"
+                  - option "Direktorat Monitoring"
+                  - option "Direktorat Pelacakan Aset, Pengelolaan Barang Bukti dan Eksekusi"
+                  - option "Direktorat Pelayanan Laporan dan Pengaduan Masyarakat"
+                  - option "Direktorat Pembinaan dan Peran Serta Masyarakat"
+                  - option "Direktorat Pembinaan Jaringan Kerjasama Antar Instansi dan Komisi"
+                  - option "Direktorat Pendidikan dan Pelatihan Antikorupsi"
+                  - option "Direktorat Penuntutan"
+                  - option "Direktorat Penyelidikan"
+                  - option "Direktorat Penyidikan"
+                  - option "Direktorat PP LHKPN"
+                  - option "Direktorat Sosialisasi dan Kampanye Antikorupsi"
+                  - option "Inspektorat"
+                  - option "Pusat Perencanaan Strategis PK"
+                  - option "Sekretariat Dewan Pengawas"
+                  - option "Sekretariat Jenderal"
+              - generic [ref=f5e126]:
+                - generic [ref=f5e127]: Sasaran Strategis
+                - combobox "Sasaran Strategis" [ref=f5e128]:
+                  - option "Pilih Sasaran Strategis" [selected]
+                  - option "Kasus Korupsi Menurun"
+                  - option "Pendidikan Anti Korupsi"
+              - generic [ref=f5e129]:
+                - generic [ref=f5e130]: Manual IKU disetujui
+                - combobox "Manual IKU disetujui" [ref=f5e131]:
+                  - option "Pilih Manual IKU" [selected]
+                  - option "Kasus Korupsi Menurun — Evaluasi Rutin terhadap korupsi"
+                  - option "Pendidikan Anti Korupsi — Meningkatnya masyarakat yang sadar anti korupsi"
+                  - option "Pendidikan Anti Korupsi — Penyuluhan anti korupsi ke universitas"
+                  - option "SS — (Draft)"
+                  - option "SS — (Draft)"
+                  - option "SS — (Draft)"
+              - generic [ref=f5e132]:
+                - generic [ref=f5e133]: Rincian Output / Komponen
+                - textbox "Rincian Output / Komponen" [ref=f5e134]
+              - generic [ref=f5e135]:
+                - generic [ref=f5e136]: Proses Bisnis
+                - textbox "Proses Bisnis" [ref=f5e137]
+              - generic [ref=f5e138]:
+                - generic [ref=f5e139]: Konteks Eksternal
+                - textbox "Konteks Eksternal" [ref=f5e140]
+              - generic [ref=f5e141]:
+                - generic [ref=f5e142]: Konteks Internal
+                - textbox "Konteks Internal" [ref=f5e143]
+              - button "Simpan Draft" [ref=f5e144] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f5e145]: 
+                - text: Simpan Draft
+          - generic [ref=f5e146]:
+            - generic [ref=f5e147]:
+              - generic [ref=f5e148]: Daftar LKK
+              - generic [ref=f5e149]: 
+            - generic [ref=f5e150]:
+              - generic [ref=f5e151]:
+                - generic [ref=f5e152]: Filter Tahun
+                - spinbutton "Filter Tahun" [ref=f5e153]: "2026"
+              - table [ref=f5e155]:
+                - rowgroup [ref=f5e156]:
+                  - row [ref=f5e157]:
+                    - columnheader "Pilih" [ref=f5e158]
+                    - columnheader "Unit" [ref=f5e159]
+                    - columnheader "Sasaran Strategis" [ref=f5e160]
+                    - columnheader "Manual IKU" [ref=f5e161]
+                    - columnheader "Output" [ref=f5e162]
+                    - columnheader "Proses Bisnis" [ref=f5e163]
+                    - columnheader "Konteks Internal" [ref=f5e164]
+                    - columnheader "Konteks Eksternal" [ref=f5e165]
+                    - columnheader "Status" [ref=f5e166]
+                    - columnheader "Detail" [ref=f5e167]
+                - rowgroup [ref=f5e168]:
+                  - row [ref=f5e169]:
+                    - cell "Belum ada data." [ref=f5e170]

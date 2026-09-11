@@ -58,6 +58,7 @@ export default function IkuPage({
   data,
   create,
   updateStatus,
+  reject,
   submitSelected,
   update,
   remove,
@@ -70,6 +71,7 @@ export default function IkuPage({
   data: Iku[];
   create: () => void;
   updateStatus: (id: string, status: string, notes?: string) => void;
+  reject: (id: string, status: string, notes?: string) => Promise<void>;
   submitSelected: (ids: string[]) => void;
   update: (id: string, body: any) => void;
   remove: (id: string) => void;
@@ -81,6 +83,23 @@ export default function IkuPage({
   const [detail, setDetail] = useState<Iku | null>(null),
     [editingId, setEditingId] = useState<string | null>(null);
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
+  const [rejectTarget, setRejectTarget] = useState<{
+    id: string;
+    status: "REJECTED" | "PIMPINAN_REJECTED";
+  } | null>(null);
+  const [rejectNotes, setRejectNotes] = useState("");
+  const [rejectBusy, setRejectBusy] = useState(false);
+  const submitReject = async () => {
+    if (!rejectTarget || !rejectNotes.trim()) return;
+    setRejectBusy(true);
+    try {
+      await reject(rejectTarget.id, rejectTarget.status, rejectNotes.trim());
+      setRejectTarget(null);
+      setRejectNotes("");
+    } finally {
+      setRejectBusy(false);
+    }
+  };
   const roles = new Set(
     (user.roles || []).map((r) =>
       String(r.role_code || "")
@@ -217,8 +236,8 @@ export default function IkuPage({
                     <button
                       type="button"
                       onClick={() => {
-                        const n = window.prompt("Alasan ditolak:");
-                        if (n) updateStatus(ss.iku_id, "REJECTED", n);
+                        setRejectTarget({ id: ss.iku_id, status: "REJECTED" });
+                        setRejectNotes("");
                       }}
                     >
                       Tolak
@@ -236,8 +255,11 @@ export default function IkuPage({
                     <button
                       type="button"
                       onClick={() => {
-                        const n = window.prompt("Alasan ditolak:");
-                        if (n) updateStatus(ss.iku_id, "PIMPINAN_REJECTED", n);
+                        setRejectTarget({
+                          id: ss.iku_id,
+                          status: "PIMPINAN_REJECTED",
+                        });
+                        setRejectNotes("");
                       }}
                     >
                       Tolak
@@ -754,6 +776,51 @@ export default function IkuPage({
           )}
         </Card>
       </div>
+      {rejectTarget && (
+        <div className="modal-backdrop" role="presentation">
+          <div className="modal-card modal-confirm" role="dialog" aria-modal="true">
+            <div className="modal-icon">
+              <i className="bi bi-x-octagon" />
+            </div>
+            <div className="modal-content">
+              <h3>Tolak Manual IKU</h3>
+              <p>
+                Berikan komentar / alasan penolakan Manual IKU ini. Alasan
+                akan disimpan sebagai catatan validasi.
+              </p>
+              <textarea
+                className="modal-textarea"
+                autoFocus
+                rows={4}
+                value={rejectNotes}
+                placeholder="Tuliskan alasan penolakan…"
+                onChange={(e) => setRejectNotes(e.target.value)}
+              />
+            </div>
+            <div className="modal-actions">
+              <button
+                type="button"
+                className="btn-secondary"
+                disabled={rejectBusy}
+                onClick={() => {
+                  setRejectTarget(null);
+                  setRejectNotes("");
+                }}
+              >
+                Batal
+              </button>
+              <button
+                type="button"
+                className="btn-primary"
+                disabled={!rejectNotes.trim() || rejectBusy}
+                onClick={submitReject}
+              >
+                {rejectBusy ? "Memproses…" : "Tolak & Simpan"}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

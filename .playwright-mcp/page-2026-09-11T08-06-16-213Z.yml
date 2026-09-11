@@ -1,0 +1,50 @@
+- generic [ref=f4e2]:
+  - generic [ref=f4e3]:
+    - generic [ref=f4e4]:
+      - generic [ref=f4e5]: S
+      - generic [ref=f4e6]:
+        - generic [ref=f4e7]: SIMONIK
+        - generic [ref=f4e8]: Sistem Monitoring Informasi Kinerja KPK
+    - generic [ref=f4e9]:
+      - generic [ref=f4e10]:
+        - text: SISTEM MONITORING INFORMASI KINERJA KPK
+        - heading "Selamat datang kembali" [level=1] [ref=f4e11]
+        - paragraph [ref=f4e12]: Masuk untuk mengakses dashboard dan modul sesuai kewenangan Anda.
+      - generic [ref=f4e13]:
+        - generic [ref=f4e14]:
+          - generic [ref=f4e15]: Username
+          - generic [ref=f4e16]:
+            - generic: 
+            - textbox "Username " [active] [ref=f4e17]:
+              - /placeholder: Masukkan username
+        - generic [ref=f4e18]:
+          - generic [ref=f4e19]: Password
+          - generic [ref=f4e20]:
+            - generic: 
+            - textbox "Password  " [ref=f4e21]:
+              - /placeholder: Masukkan password
+            - button "" [ref=f4e22] [cursor=pointer]
+        - button "Masuk ke SIMONIK " [ref=f4e24] [cursor=pointer]:
+          - text: Masuk ke SIMONIK
+          - generic [ref=f4e25]: 
+      - generic [ref=f4e26]:
+        - generic [ref=f4e27]:
+          - generic [ref=f4e28]: 
+          - text: Akses berbasis peran
+        - generic [ref=f4e29]:
+          - generic [ref=f4e30]: 
+          - text: Koneksi aman
+  - generic [ref=f4e34]:
+    - text: GOVERNANCE • RISK • PERFORMANCE
+    - heading "Satu platform untuk kinerja dan risiko yang terintegrasi." [level=2] [ref=f4e35]
+    - paragraph [ref=f4e36]: SIMONIK membantu memastikan informasi yang tepat tersedia bagi pengguna yang tepat sesuai kewenangan masing-masing.
+    - generic [ref=f4e37]:
+      - generic [ref=f4e38]: 
+      - generic [ref=f4e39]:
+        - generic [ref=f4e40]: Dashboard terintegrasi
+        - generic [ref=f4e41]: Ringkasan informasi lintas modul.
+    - generic [ref=f4e42]:
+      - generic [ref=f4e43]: 
+      - generic [ref=f4e44]:
+        - generic [ref=f4e45]: Role-based access
+        - generic [ref=f4e46]: Menu dan akses disesuaikan dengan peran.

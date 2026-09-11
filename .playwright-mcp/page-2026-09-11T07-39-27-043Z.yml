@@ -1,0 +1,31 @@
+- generic [ref=f1e2]:
+  - generic [ref=f1e3]:
+    - generic [ref=f1e4]:
+      - generic [ref=f1e5]: S
+      - generic [ref=f1e6]: SIMONIKSistem Monitoring Informasi Kinerja KPK
+    - generic [ref=f1e7]:
+      - generic [ref=f1e8]:
+        - text: SISTEM MONITORING INFORMASI KINERJA KPK
+        - heading "Selamat datang kembali" [level=1] [ref=f1e9]
+        - paragraph [ref=f1e10]: Masuk untuk mengakses dashboard dan modul sesuai kewenangan Anda.
+      - generic [ref=f1e11]:
+        - generic [ref=f1e12]:
+          - text: Username
+          - textbox "Username" [active] [ref=f1e14]:
+            - /placeholder: Masukkan username
+        - generic [ref=f1e15]:
+          - text: Password
+          - generic [ref=f1e16]:
+            - textbox "Password" [ref=f1e17]:
+              - /placeholder: Masukkan password
+            - button [ref=f1e18]
+        - button "Masuk ke SIMONIK" [ref=f1e19]
+      - generic [ref=f1e20]:
+        - generic [ref=f1e21]: Akses berbasis peran
+        - generic [ref=f1e22]: Koneksi aman
+  - generic [ref=f1e24]:
+    - text: GOVERNANCE • RISK • PERFORMANCE
+    - heading "Satu platform untuk kinerja dan risiko yang terintegrasi." [level=2] [ref=f1e25]
+    - paragraph [ref=f1e26]: SIMONIK membantu memastikan informasi yang tepat tersedia bagi pengguna yang tepat sesuai kewenangan masing-masing.
+    - generic [ref=f1e27]: Dashboard terintegrasiRingkasan informasi lintas modul.
+    - generic [ref=f1e29]: Role-based accessMenu dan akses disesuaikan dengan peran.

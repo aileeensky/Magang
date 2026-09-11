@@ -159,9 +159,17 @@ app.post('/api/performance/iku',async(req,res)=>{
  const b=req.body||{};
  const organizationId=b.organization_id||req.user?.organization_id||null;
  if(!organizationId)return res.status(400).json({message:'Unit kerja belum terhubung dengan pengguna.',code:'ORG_REQUIRED'});
- const codes=normalizedRoleCodes(req.user);
- if(!isSuperAdmin(req.user)&&!codes.has('MANAJER_KINERJA'))return res.status(403).json({message:'Hanya Manajer Kinerja yang dapat membuat Manual IKU.'});
- const cleanUuid=(v)=>{
+const codes=normalizedRoleCodes(req.user);
+  if(!isSuperAdmin(req.user)&&!codes.has('MANAJER_KINERJA'))return res.status(403).json({message:'Hanya Manajer Kinerja yang dapat membuat Manual IKU.'});
+  if(!String(b.indicator_name||'').trim())return res.status(400).json({message:'Nama indikator (IKU) wajib diisi.',code:'IKU_NAME_REQUIRED'});
+  const yearNum=Number(b.year);
+  if(!Number.isInteger(yearNum)||yearNum<1900||yearNum>2200)return res.status(400).json({message:'Tahun harus berupa angka antara 1900 dan 2200.',code:'IKU_YEAR_INVALID'});
+  for(const v of [b.target_tw1,b.target_tw2,b.target_tw3,b.target_tw4]){
+   if(v===''||v===null||v===undefined)continue;
+   const n=Number(v);
+   if(!Number.isFinite(n)||n<0)return res.status(400).json({message:'Target triwulan tidak boleh negatif.',code:'IKU_TARGET_INVALID'});
+  }
+  const cleanUuid=(v)=>{
    const s=String(v??'').trim();
    return s && /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(s)?s:null;
  };
@@ -334,12 +342,21 @@ app.post('/api/performance/iku/:id/status',async(req,res)=>{
     const r=await q(`update performance.iku_manual set active=false,manual_iku_status='APPROVED',pending_action='NONE',pimpinan_validation_status='APPROVED',updated_at=now() where iku_id=$1 returning *`,[req.params.id]);
     return res.json(r.rows[0]);
    }
-   const r=await q(`update performance.iku_manual set manual_iku_status='APPROVED',pending_action='NONE',pimpinan_validation_status='APPROVED',updated_at=now() where iku_id=$1 returning *`,[req.params.id]);
-   await q(`insert into performance.performance_agreement(organization_id,year,strategic_objective_id,iku_id,target_tw1,target_tw2,target_tw3,target_tw4,perjanjian_kinerja_status,bidang_validation_status,pimpinan_validation_status)
-     select organization_id,year,strategic_objective_id,iku_id,target_tw1,target_tw2,target_tw3,target_tw4,'DRAFT','PENDING','PENDING'
-     from performance.iku_manual where iku_id=$1
-     on conflict (organization_id,year,iku_id) do update set status='DRAFT',bidang_validation_status='PENDING',pimpinan_validation_status='PENDING',active=true,updated_at=now()`,[req.params.id]);
-   return res.json(r.rows[0]);
+const client=await pool.connect();
+    try{
+     await client.query('BEGIN');
+     await client.query(`update performance.iku_manual set manual_iku_status='APPROVED',pending_action='NONE',pimpinan_validation_status='APPROVED',updated_at=now() where iku_id=$1`,[req.params.id]);
+     await client.query(`insert into performance.performance_agreement(organization_id,year,strategic_objective_id,iku_id,target_tw1,target_tw2,target_tw3,target_tw4,perjanjian_kinerja_status,bidang_validation_status,pimpinan_validation_status)
+      select organization_id,year,strategic_objective_id,iku_id,target_tw1,target_tw2,target_tw3,target_tw4,'DRAFT','PENDING','PENDING'
+      from performance.iku_manual where iku_id=$1
+      on conflict (organization_id,year,iku_id) do update set perjanjian_kinerja_status='DRAFT',bidang_validation_status='PENDING',pimpinan_validation_status='PENDING',active=true,updated_at=now()`,[req.params.id]);
+     await client.query('COMMIT');
+    }catch(e){
+     try{await client.query('ROLLBACK')}catch{}
+     throw e;
+    }finally{client.release()}
+    const r=await q(`select * from performance.iku_manual where iku_id=$1`,[req.params.id]);
+    return res.json(r.rows[0]);
   }
   if(next==='PIMPINAN_REJECTED'){
    if(!isSuperAdmin(req.user)&&(!c.has('PIMPINAN_UNIT')||old.manual_iku_status!=='REVIEWED'))return res.status(403).json({message:'Tidak memiliki kewenangan.'});
@@ -409,33 +426,57 @@ app.post('/api/performance/pks/confirm-bulk',async(req,res)=>{
  try{
   const org=(await q(`select organization_id,parent_id,organization_level from master.organization where organization_id=$1::uuid and is_active=true`,[req.user.organization_id])).rows[0];
   if(!org)return res.status(404).json({message:'Organisasi Pimpinan Unit Kerja tidak ditemukan.'});
-  let fromStatus='SUBMITTED',toStatus='REVIEWED',allowedOrgSql='';
-  if(String(org.organization_level||'').toUpperCase()==='UKE_II'){
-    // Pimpinan UKE_II mengonfirmasi PK milik Manajer Kinerja pada UKE_II yang sama.
-    // Anak organisasi juga tetap termasuk agar struktur organisasi bertingkat tetap terbaca.
-    allowedOrgSql=`p.organization_id in (with recursive org_tree as (
-      select organization_id from master.organization where organization_id=$1::uuid and is_active=true
-      union all
-      select o.organization_id from master.organization o join org_tree t on o.parent_id=t.organization_id where o.is_active=true
-    ) select organization_id from org_tree)`;
-  }else if(String(org.organization_level||'').toUpperCase()==='UKE_I'){
-    // Pimpinan UKE_I mengonfirmasi PK yang sebelumnya sudah direview UKE_II
-    // pada seluruh UKE_II di bawah UKE_I tersebut.
-    allowedOrgSql=`p.organization_id in (with recursive org_tree as (
-      select organization_id from master.organization where organization_id=$1::uuid and is_active=true
-      union all
-      select o.organization_id from master.organization o join org_tree t on o.parent_id=t.organization_id where o.is_active=true
-    ) select organization_id from org_tree)`;
-    fromStatus='REVIEWED';toStatus='APPROVED';
-  }else return res.status(403).json({message:'Konfirmasi PK hanya tersedia untuk Pimpinan Unit Kerja Tingkat UKE_II atau UKE_I.'});
-  const r=await q(`update performance.performance_agreement p set perjanjian_kinerja_status=$2,bidang_validation_status=case when $2='REVIEWED' then 'APPROVED' else p.bidang_validation_status end,pimpinan_validation_status=case when $2='APPROVED' then 'APPROVED' else p.pimpinan_validation_status end,updated_at=now() where p.active=true and p.year=$3 and p.perjanjian_kinerja_status=$4 and ${allowedOrgSql} returning p.*`,[req.user.organization_id,toStatus,year,fromStatus]);
-  if(!r.rows.length)return res.status(409).json({message:`Tidak ada data PK ${fromStatus} untuk dikonfirmasi pada tahun yang dipilih.`});
-  res.json({message:`${r.rows.length} Perjanjian Kinerja berhasil dikonfirmasi.`,count:r.rows.length,status:toStatus});
- }catch(e){res.status(400).json({message:e.message})}
+  const level=String(org.organization_level||'').trim().toUpperCase();
+  if(!['UKE_II','UKE_I'].includes(level))return res.status(403).json({message:`Konfirmasi PK hanya tersedia untuk Pimpinan Unit Kerja tingkat UKE_II atau UKE_I. Level organisasi saat ini: ${org.organization_level||'-'}.`});
+
+  // UKE_II: manager berada pada organisasi UKE_II yang sama. Descendant tetap
+  // disertakan untuk struktur organisasi bertingkat.
+  if(level==='UKE_II'){
+   const r=await q(`with recursive org_tree as (
+     select organization_id from master.organization where organization_id=$1::uuid and is_active=true
+     union all
+     select o.organization_id from master.organization o join org_tree t on o.parent_id=t.organization_id where o.is_active=true
+   )
+   update performance.performance_agreement p
+      set perjanjian_kinerja_status='REVIEWED',
+          bidang_validation_status='APPROVED',
+          updated_at=now()
+    from org_tree t
+   where p.organization_id=t.organization_id
+     and p.active=true
+     and p.year=$2
+     and p.perjanjian_kinerja_status='SUBMITTED'
+   returning p.*`,[req.user.organization_id,year]);
+   if(!r.rows.length)return res.status(409).json({message:`Tidak ada data PK SUBMITTED untuk dikonfirmasi pada tahun ${year}.`});
+   return res.json({message:`${r.rows.length} Perjanjian Kinerja UKE II berhasil dikonfirmasi.`,count:r.rows.length,status:'REVIEWED'});
+  }
+
+  // UKE_I: konfirmasi PK yang sudah direview oleh UKE_II di bawah UKE_I.
+  const r=await q(`with recursive org_tree as (
+    select organization_id from master.organization where organization_id=$1::uuid and is_active=true
+    union all
+    select o.organization_id from master.organization o join org_tree t on o.parent_id=t.organization_id where o.is_active=true
+  )
+  update performance.performance_agreement p
+     set perjanjian_kinerja_status='APPROVED',
+         pimpinan_validation_status='APPROVED',
+         updated_at=now()
+   from org_tree t
+  where p.organization_id=t.organization_id
+    and p.active=true
+    and p.year=$2
+    and p.perjanjian_kinerja_status='REVIEWED'
+  returning p.*`,[req.user.organization_id,year]);
+  if(!r.rows.length)return res.status(409).json({message:`Tidak ada data PK REVIEWED untuk dikonfirmasi pada tahun ${year}.`});
+  res.json({message:`${r.rows.length} Perjanjian Kinerja UKE I berhasil dikonfirmasi.`,count:r.rows.length,status:'APPROVED'});
+ }catch(e){
+  console.error('confirm-bulk PK error:',e);
+  res.status(500).json({message:'Gagal mengonfirmasi Perjanjian Kinerja.',detail:e.message});
+ }
 });
 app.post('/api/performance/pks/:id/status',async(req,res)=>{const next=String(req.body.status||'').toUpperCase(),notes=String(req.body.notes||'').trim()||null;try{const old=(await q(`select * from performance.performance_agreement where agreement_id=$1 and active=true`,[req.params.id])).rows[0];if(!old)return res.status(404).json({message:'Perjanjian Kinerja tidak ditemukan'});const c=normalizedRoleCodes(req.user);if(next==='SUBMITTED'&&['DRAFT','REJECTED'].includes(old.perjanjian_kinerja_status)&&(isSuperAdmin(req.user)||c.has('MANAJER_KINERJA'))&&old.organization_id===req.user.organization_id){const r=await q(`update performance.performance_agreement set perjanjian_kinerja_status='SUBMITTED',bidang_validation_status='PENDING',pimpinan_validation_status='PENDING',updated_at=now() where agreement_id=$1 returning *`,[req.params.id]);return res.json(r.rows[0])}if(next==='REVIEWED'&&old.perjanjian_kinerja_status==='SUBMITTED'&&(isSuperAdmin(req.user)||c.has('PIMPINAN_UNIT'))){return res.status(400).json({message:'Gunakan konfirmasi massal berdasarkan tahun.'})}if(next==='APPROVED'&&old.perjanjian_kinerja_status==='REVIEWED'&&(isSuperAdmin(req.user)||c.has('PIMPINAN_UNIT'))){return res.status(400).json({message:'Gunakan konfirmasi massal berdasarkan tahun.'})}if(next==='REJECTED'&&!notes)return res.status(400).json({message:'Alasan penolakan wajib diisi.'});return res.status(403).json({message:'Perubahan status PK tidak sesuai alur validasi.'})}catch(e){res.status(400).json({message:e.message})}});
 app.get('/api/performance/outputs',async(_,res)=>{try{res.json((await q(`select m.*,o.organization_name from performance.output_manual m left join master.organization o on o.organization_id=m.organization_id order by m.year desc,m.created_at desc`)).rows)}catch(e){res.status(500).json({message:e.message})}});
-app.post('/api/performance/outputs',async(req,res)=>{const b=req.body;try{const r=await q(`insert into performance.output_manual(organization_id,year,classification_code,output_name,output_indicator,output_type,target_value,unit,component,status) values($1,$2,$3,$4,$5,$6,$7,$8,$9,'DRAFT') returning *`,[b.organization_id,b.year,b.classification_code||null,b.output_name,b.output_indicator||null,b.output_type,b.target_value??null,b.unit||null,b.component||null]);res.status(201).json(r.rows[0])}catch(e){res.status(400).json({message:e.message})}});
+app.post('/api/performance/outputs',async(req,res)=>{const b=req.body||{};try{const organizationId=b.organization_id||req.user?.organization_id||null;if(!organizationId)return res.status(400).json({message:'Unit kerja belum terhubung dengan pengguna.',code:'ORG_REQUIRED'});const r=await q(`insert into performance.output_manual(organization_id,year,classification_code,output_name,output_indicator,output_type,target_value,unit,component,status) values($1,$2,$3,$4,$5,$6,$7,$8,$9,'DRAFT') returning *`,[organizationId,b.year,b.classification_code||null,b.output_name,b.output_indicator||null,b.output_type,b.target_value??null,b.unit||null,b.component||null]);res.status(201).json(r.rows[0])}catch(e){res.status(400).json({message:e.message})}});
 app.put('/api/performance/outputs/:id',async(req,res)=>{const b=req.body;try{const r=await q(`update performance.output_manual set classification_code=$1,output_name=$2,output_indicator=$3,output_type=$4,target_value=$5,unit=$6,component=$7,updated_at=now() where output_manual_id=$8 returning *`,[b.classification_code||null,b.output_name,b.output_indicator||null,b.output_type,b.target_value??null,b.unit||null,b.component||null,req.params.id]);if(!r.rows[0])return res.status(404).json({message:'Manual Rincian Output tidak ditemukan'});res.json(r.rows[0])}catch(e){res.status(400).json({message:e.message})}});
 app.post('/api/performance/outputs/:id/status',async(req,res)=>{await performanceStatus(req,res,'performance.output_manual','output_manual_id')});
 

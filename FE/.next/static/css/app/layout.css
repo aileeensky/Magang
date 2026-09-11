@@ -2208,6 +2208,27 @@ url(/_next/static/media/bootstrap-icons.ac1a99b3.woff) format("woff");
 .btn-secondary:hover{background:#f8fafc}
 .modal-actions button:disabled{opacity:.6;cursor:not-allowed}
 
+/* Reject reason modal (Validasi Manual IKU) */
+.modal-textarea{width:100%;margin-top:12px;border:1px solid #dbe2ea;border-radius:10px;padding:10px 12px;font:inherit;font-size:13px;color:#172033;resize:vertical;min-height:96px}
+.modal-textarea:focus{outline:none;border-color:var(--blue)}
+.modal-confirm .modal-icon{background:#fef2f2;color:#dc2626}
+
+/* Tracking status Perjanjian Kinerja */
+.pk-tracking{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.pk-track-item{flex:1 1;min-width:96px;border:1px solid #e5e9f0;border-radius:10px;padding:8px 10px;display:flex;flex-direction:column;gap:2px;background:#fff}
+.pk-track-item b{font-size:18px;line-height:1}
+.pk-track-item span{font-size:10px;color:#64748b;font-weight:600}
+.pk-track-item.approved{border-color:#bbf7d0;background:#f0fdf4}
+.pk-track-item.approved b{color:#166534}
+.pk-track-item.reviewed{border-color:#bfdbfe;background:#eff6ff}
+.pk-track-item.reviewed b{color:#1d4ed8}
+.pk-track-item.submitted{border-color:#fde68a;background:#fffbeb}
+.pk-track-item.submitted b{color:#b45309}
+.pk-track-item.draft{border-color:#e2e8f0;background:#f8fafc}
+.pk-track-item.draft b{color:#475569}
+.pk-track-item.rejected{border-color:#fecaca;background:#fef2f2}
+.pk-track-item.rejected b{color:#b91c1c}
+
 /* =========================================================
    MODERN INTERACTION + RESPONSIVE SYSTEM
    ========================================================= */

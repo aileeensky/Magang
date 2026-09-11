@@ -43,13 +43,23 @@ export default function PkPage({orgs,ikus,data,user,submitBulk,confirmBulk}:{
  const isUkeI=isLeader&&level==="UKE_I";
  const canSubmit=rows.some(x=>["DRAFT","REJECTED","APPROVED"].includes(String(x.perjanjian_kinerja_status).toUpperCase()));
  const canConfirm=isUkeII ? rows.some(x=>String(x.perjanjian_kinerja_status).toUpperCase()==="SUBMITTED") : isUkeI ? rows.some(x=>String(x.perjanjian_kinerja_status).toUpperCase()==="REVIEWED") : false;
- const actionLabel=isUkeII?"Konfirmasi Perjanjian Kinerja UKE II":"Konfirmasi Perjanjian Kinerja UKE I";
- return <section>
-  <PageTitle icon="bi-file-earmark-check" title="Perjanjian Kinerja" subtitle="Daftar Perjanjian Kinerja berdasarkan tahun. Pengajuan dan konfirmasi dilakukan sekaligus untuk seluruh data pada tahun yang dipilih."/>
-  <Card title="Daftar Perjanjian Kinerja">
-   <div className="form-row">
-    <Field label="Filter Tahun"><input type="number" value={year} onChange={e=>setYear(e.target.value)}/></Field>
-   </div>
+const actionLabel=isUkeII?"Konfirmasi Perjanjian Kinerja UKE II":"Konfirmasi Perjanjian Kinerja UKE I";
+  const statusCount=(s:string)=>rows.filter(x=>String(x.perjanjian_kinerja_status||"").toUpperCase()===s).length;
+  const tracking=[["DRAFT","Draft"],["SUBMITTED","Diajukan"],["REVIEWED","Direviu"],["APPROVED","Disetujui"],["REJECTED","Ditolak"]].map(([code,label])=>({code,label,count:statusCount(String(code))}));
+  return <section>
+   <PageTitle icon="bi-file-earmark-check" title="Perjanjian Kinerja" subtitle="Daftar Perjanjian Kinerja berdasarkan tahun. Pengajuan dan konfirmasi dilakukan sekaligus untuk seluruh data pada tahun yang dipilih."/>
+   <Card title="Daftar Perjanjian Kinerja">
+    <div className="form-row">
+     <Field label="Filter Tahun"><input type="number" value={year} onChange={e=>setYear(e.target.value)}/></Field>
+    </div>
+    <div className="pk-tracking" aria-label="Tracking status Perjanjian Kinerja">
+     {tracking.map(t=>(
+      <div className={`pk-track-item ${t.code.toLowerCase()}`} key={t.code}>
+       <b>{t.count}</b>
+       <span>{t.label}</span>
+      </div>
+     ))}
+    </div>
    <DataTable
     headers={["No.","Unit Kerja","Sasaran Strategis","Indikator Kinerja","Target","Status"]}
     rows={rows.map((x:any,i:number)=>[

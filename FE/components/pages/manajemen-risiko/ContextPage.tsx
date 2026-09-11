@@ -8,9 +8,12 @@ export default function ContextPage({orgs,refs,form,setForm,data,create,onSelect
  const ikus=refs.performance_ikus.filter(x=>String(x.year)===year);
  const rows=useMemo(()=>data.filter(x=>!year||String((x as any).performance_iku_year||"")===year),[data,year]);
  const toggle=(id:string)=>setSelected(s=>s.includes(id)?s.filter(x=>x!==id):[...s,id]);
- return <section>
-  <PageTitle icon="bi-diagram-3" title="Lingkup, Konteks & Kriteria" subtitle="LKK disusun dari Manual IKU yang telah disetujui kedua pihak."/>
-  <div className="grid-2">
+return <section>
+   <PageTitle icon="bi-diagram-3" title="Lingkup, Konteks & Kriteria" subtitle="LKK disusun dari Manual IKU yang telah disetujui kedua pihak."/>
+   <div className="form-row" style={{marginBottom:16}}>
+    <Field label="Filter Tahun"><input type="number" value={year} onChange={e=>setYear(e.target.value)}/></Field>
+   </div>
+   <div className="grid-2">
    <Card title="Form LKK">
     <form onSubmit={e=>{e.preventDefault();create()}}>
      <Field label="Unit Kerja"><select required value={form.organization_id} onChange={e=>setForm({...form,organization_id:e.target.value})}>{orgs.map(o=><option key={o.organization_id} value={o.organization_id}>{o.organization_name}</option>)}</select></Field>
@@ -24,7 +27,6 @@ export default function ContextPage({orgs,refs,form,setForm,data,create,onSelect
     </form>
    </Card>
    <Card title="Daftar LKK">
-    <Field label="Filter Tahun"><input type="number" value={year} onChange={e=>setYear(e.target.value)}/></Field>
     <DataTable headers={["Pilih","Unit","Sasaran Strategis","Manual IKU","Output","Proses Bisnis","Konteks Internal","Konteks Eksternal","Status","Detail"]} rows={rows.map(c=>[
       <input type="checkbox" checked={selected.includes(c.risk_context_id)} disabled={c.status!=="DRAFT"&&c.status!=="REJECTED"} onChange={e=>{e.stopPropagation();toggle(c.risk_context_id)}} key={c.risk_context_id}/>,
       c.organization_name||"—",c.strategic_objective_name||"—",c.performance_iku_name||"—",c.output_detail||c.performance_output_name||"—",c.business_process_detail||c.business_process_name||"—",c.internal_context||"—",c.external_context||"—",

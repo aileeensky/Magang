@@ -1,0 +1,147 @@
+- generic [ref=f13e1]:
+  - alert [ref=f13e47]
+  - generic [ref=f13e48]:
+    - complementary [ref=f13e49]:
+      - text: 
+      - generic [ref=f13e50]:
+        - generic [ref=f13e51]:
+          - generic [ref=f13e52]: S
+          - generic [ref=f13e53]:
+            - generic [ref=f13e54]: SIMONIK
+            - generic [ref=f13e55]: Monitoring Informasi Kinerja KPK
+        - generic [ref=f13e56]: MODUL
+      - navigation "Navigasi utama" [ref=f13e57]:
+        - button " Dashboard ROPN" [ref=f13e58] [cursor=pointer]:
+          - generic [ref=f13e59]: 
+          - generic [ref=f13e60]: Dashboard ROPN
+        - button " Dashboard SIMONIK" [ref=f13e61] [cursor=pointer]:
+          - generic [ref=f13e62]: 
+          - generic [ref=f13e63]: Dashboard SIMONIK
+        - button " Perencanaan Strategis " [ref=f13e65] [cursor=pointer]:
+          - generic [ref=f13e66]: 
+          - generic [ref=f13e67]: Perencanaan Strategis
+          - generic [ref=f13e68]: 
+        - generic [ref=f13e69]:
+          - button " Manajemen Kinerja " [expanded] [ref=f13e1046] [cursor=pointer]:
+            - generic [ref=f13e71]: 
+            - generic [ref=f13e72]: Manajemen Kinerja
+            - generic [ref=f13e73]: 
+          - generic [ref=f13e1047]:
+            - button "Manual IKU " [ref=f13e1048] [cursor=pointer]:
+              - generic [ref=f13e1049]: Manual IKU
+              - generic [ref=f13e1050]: 
+            - button "Perjanjian Kinerja " [ref=f13e1051] [cursor=pointer]:
+              - generic [ref=f13e1052]: Perjanjian Kinerja
+              - generic [ref=f13e1053]: 
+            - button "Manual Rincian Output & Komponen " [ref=f13e1054] [cursor=pointer]:
+              - generic [ref=f13e1055]: Manual Rincian Output & Komponen
+              - generic [ref=f13e1056]: 
+        - button " Manajemen Risiko " [ref=f13e75] [cursor=pointer]:
+          - generic [ref=f13e76]: 
+          - generic [ref=f13e77]: Manajemen Risiko
+          - generic [ref=f13e78]: 
+        - button " Monitoring & Reviu" [ref=f13e79] [cursor=pointer]:
+          - generic [ref=f13e80]: 
+          - generic [ref=f13e81]: Monitoring & Reviu
+        - button " Akun Saya" [ref=f13e82] [cursor=pointer]:
+          - generic [ref=f13e83]: 
+          - generic [ref=f13e84]: Akun Saya
+      - generic [ref=f13e85]:
+        - generic [ref=f13e86]:
+          - generic [ref=f13e87]: 
+          - generic [ref=f13e88]:
+            - generic [ref=f13e89]: Alur terintegrasi
+            - generic [ref=f13e90]: Renstra → Kinerja → Risiko → Monev
+        - button "Collapse sidebar" [ref=f13e91] [cursor=pointer]:
+          - generic [ref=f13e92]: 
+    - dialog [ref=f13e1127]:
+      - generic [ref=f13e1128]: 
+      - generic [ref=f13e1130]:
+        - heading "Konfirmasi Logout" [level=3] [ref=f13e1131]
+        - paragraph [ref=f13e1132]: Apakah Anda yakin ingin keluar dari aplikasi SIMONIK?
+      - generic [ref=f13e1133]:
+        - button "Batal" [ref=f13e1134] [cursor=pointer]:
+          - generic [aria-hidden] [ref=f13e1135]: 
+          - text: Batal
+        - button "Ya, Logout" [ref=f13e1136] [cursor=pointer]
+    - main [ref=f13e94]:
+      - generic [ref=f13e95]:
+        - text: 
+        - generic [ref=f13e96]:
+          - text: SISTEM MONITORING INFORMASI KINERJA KPK
+          - heading "Perjanjian Kinerja" [level=1] [ref=f13e1057]
+          - paragraph [ref=f13e98]: Pengelolaan data kinerja dan risiko secara terintegrasi.
+        - generic [ref=f13e99]:
+          - generic [ref=f13e100]:
+            - generic [ref=f13e101]: 
+            - text: Sistem aktif
+          - generic [ref=f13e102]:
+            - generic [ref=f13e103]: PU
+            - generic [ref=f13e104]:
+              - generic [ref=f13e105]: Pimpinan Unit Demo
+              - generic [ref=f13e106]: Pimpinan Unit Kerja
+            - button "Keluar dari SIMONIK" [active] [ref=f13e107] [cursor=pointer]:
+              - generic [ref=f13e108]: 
+      - generic [ref=f13e1058]:
+        - generic [ref=f13e1059]:
+          - generic [ref=f13e1060]: 
+          - generic [ref=f13e1062]:
+            - heading "Perjanjian Kinerja" [level=2] [ref=f13e1063]
+            - paragraph [ref=f13e1064]: Daftar Perjanjian Kinerja berdasarkan tahun. Pengajuan dan konfirmasi dilakukan sekaligus untuk seluruh data pada tahun yang dipilih.
+        - generic [ref=f13e1065]:
+          - generic [ref=f13e1066]:
+            - generic [ref=f13e1067]: Daftar Perjanjian Kinerja
+            - generic [ref=f13e1068]: 
+          - generic [ref=f13e1069]:
+            - generic [ref=f13e1071]:
+              - generic [ref=f13e1072]: Filter Tahun
+              - spinbutton "Filter Tahun" [ref=f13e1073]: "2026"
+            - generic "Tracking status Perjanjian Kinerja" [ref=f13e1074]:
+              - generic [ref=f13e1075]:
+                - generic [ref=f13e1076]: "1"
+                - generic [ref=f13e1077]: Draft
+              - generic [ref=f13e1078]:
+                - generic [ref=f13e1079]: "0"
+                - generic [ref=f13e1080]: Diajukan
+              - generic [ref=f13e1081]:
+                - generic [ref=f13e1082]: "2"
+                - generic [ref=f13e1083]: Direviu
+              - generic [ref=f13e1084]:
+                - generic [ref=f13e1085]: "0"
+                - generic [ref=f13e1086]: Disetujui
+              - generic [ref=f13e1087]:
+                - generic [ref=f13e1088]: "0"
+                - generic [ref=f13e1089]: Ditolak
+            - table [ref=f13e1091]:
+              - rowgroup [ref=f13e1092]:
+                - row [ref=f13e1093]:
+                  - columnheader "No." [ref=f13e1094]
+                  - columnheader "Unit Kerja" [ref=f13e1095]
+                  - columnheader "Sasaran Strategis" [ref=f13e1096]
+                  - columnheader "Indikator Kinerja" [ref=f13e1097]
+                  - columnheader "Target" [ref=f13e1098]
+                  - columnheader "Status" [ref=f13e1099]
+              - rowgroup [ref=f13e1100]:
+                - row [ref=f13e1101]:
+                  - cell "1" [ref=f13e1102]
+                  - cell "Biro SDM" [ref=f13e1103]
+                  - cell "—" [ref=f13e1104]
+                  - cell "FIX-VERIFY-716122" [ref=f13e1105]
+                  - cell "10" [ref=f13e1106]
+                  - cell "DRAFT" [ref=f13e1107]
+                - row [ref=f13e1109]:
+                  - cell "2" [ref=f13e1110]
+                  - cell "Biro SDM" [ref=f13e1111]
+                  - cell "Kasus Korupsi Menurun" [ref=f13e1112]
+                  - cell "Evaluasi Rutin terhadap korupsi" [ref=f13e1113]
+                  - cell "1 (indeks)" [ref=f13e1114]
+                  - cell "REVIEWED" [ref=f13e1115]
+                - row [ref=f13e1117]:
+                  - cell "3" [ref=f13e1118]
+                  - cell "Biro SDM" [ref=f13e1119]
+                  - cell "Pendidikan Anti Korupsi" [ref=f13e1120]
+                  - cell "Meningkatnya masyarakat yang sadar anti korupsi" [ref=f13e1121]
+                  - cell "100 (persentase)" [ref=f13e1122]
+                  - cell "REVIEWED" [ref=f13e1123]
+            - button "Konfirmasi Perjanjian Kinerja UKE II" [disabled] [ref=f13e1126] [cursor=pointer]
+  - generic [aria-hidden] [ref=f13e1035]: 73%

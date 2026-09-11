@@ -1,0 +1,428 @@
+- generic [ref=f10e1]:
+  - alert [ref=f10e47]
+  - generic [ref=f10e48]:
+    - complementary [ref=f10e49]:
+      - text: 
+      - generic [ref=f10e50]:
+        - generic [ref=f10e51]:
+          - generic [ref=f10e52]: S
+          - generic [ref=f10e53]:
+            - generic [ref=f10e54]: SIMONIK
+            - generic [ref=f10e55]: Monitoring Informasi Kinerja KPK
+        - generic [ref=f10e56]: MODUL
+      - navigation "Navigasi utama" [ref=f10e57]:
+        - button " Dashboard ROPN" [ref=f10e58] [cursor=pointer]:
+          - generic [ref=f10e59]: 
+          - generic [ref=f10e60]: Dashboard ROPN
+        - button " Dashboard SIMONIK" [ref=f10e61] [cursor=pointer]:
+          - generic [ref=f10e62]: 
+          - generic [ref=f10e63]: Dashboard SIMONIK
+        - button " Perencanaan Strategis " [ref=f10e65] [cursor=pointer]:
+          - generic [ref=f10e66]: 
+          - generic [ref=f10e67]: Perencanaan Strategis
+          - generic [ref=f10e68]: 
+        - generic [ref=f10e69]:
+          - button " Manajemen Kinerja " [expanded] [ref=f10e1036] [cursor=pointer]:
+            - generic [ref=f10e71]: 
+            - generic [ref=f10e72]: Manajemen Kinerja
+            - generic [ref=f10e73]: 
+          - generic [ref=f10e1037]:
+            - button "Manual IKU " [active] [ref=f10e1038] [cursor=pointer]:
+              - generic [ref=f10e1039]: Manual IKU
+              - generic [ref=f10e1040]: 
+            - button "Perjanjian Kinerja " [ref=f10e1041] [cursor=pointer]:
+              - generic [ref=f10e1042]: Perjanjian Kinerja
+              - generic [ref=f10e1043]: 
+            - button "Manual Rincian Output & Komponen " [ref=f10e1044] [cursor=pointer]:
+              - generic [ref=f10e1045]: Manual Rincian Output & Komponen
+              - generic [ref=f10e1046]: 
+        - button " Manajemen Risiko " [ref=f10e75] [cursor=pointer]:
+          - generic [ref=f10e76]: 
+          - generic [ref=f10e77]: Manajemen Risiko
+          - generic [ref=f10e78]: 
+        - button " Monitoring & Reviu" [ref=f10e79] [cursor=pointer]:
+          - generic [ref=f10e80]: 
+          - generic [ref=f10e81]: Monitoring & Reviu
+        - button " Akun Saya" [ref=f10e82] [cursor=pointer]:
+          - generic [ref=f10e83]: 
+          - generic [ref=f10e84]: Akun Saya
+      - generic [ref=f10e85]:
+        - generic [ref=f10e86]:
+          - generic [ref=f10e87]: 
+          - generic [ref=f10e88]:
+            - generic [ref=f10e89]: Alur terintegrasi
+            - generic [ref=f10e90]: Renstra → Kinerja → Risiko → Monev
+        - button "Collapse sidebar" [ref=f10e91] [cursor=pointer]:
+          - generic [ref=f10e92]: 
+    - main [ref=f10e94]:
+      - generic [ref=f10e95]:
+        - text: 
+        - generic [ref=f10e96]:
+          - text: SISTEM MONITORING INFORMASI KINERJA KPK
+          - heading "Manajemen Kinerja" [level=1] [ref=f10e1057]
+          - paragraph [ref=f10e98]: Pengelolaan data kinerja dan risiko secara terintegrasi.
+        - generic [ref=f10e99]:
+          - generic [ref=f10e100]:
+            - generic [ref=f10e101]: 
+            - text: Sistem aktif
+          - generic [ref=f10e102]:
+            - generic [ref=f10e103]: PU
+            - generic [ref=f10e104]:
+              - generic [ref=f10e105]: Pimpinan Unit Demo
+              - generic [ref=f10e106]: Pimpinan Unit Kerja
+            - button "Keluar dari SIMONIK" [ref=f10e107] [cursor=pointer]:
+              - generic [ref=f10e108]: 
+      - generic [ref=f10e1058]:
+        - generic [ref=f10e1059]:
+          - generic [ref=f10e1060]: 
+          - generic [ref=f10e1062]:
+            - heading "Manual IKU" [level=2] [ref=f10e1063]
+            - paragraph [ref=f10e1064]: Penyusunan, pengajuan, dan validasi Indikator Kinerja Utama.
+        - generic [ref=f10e1065]:
+          - generic [ref=f10e1066]:
+            - generic [ref=f10e1067]:
+              - generic [ref=f10e1068]: Form Manual IKU
+              - generic [ref=f10e1069]: 
+            - generic [ref=f10e1071]:
+              - generic [ref=f10e1072]:
+                - generic [ref=f10e1073]: Tahun
+                - spinbutton "Tahun" [ref=f10e1074]: "2026"
+              - generic [ref=f10e1075]:
+                - generic [ref=f10e1076]: Unit Kerja Tingkat UKE 1
+                - textbox "Unit Kerja Tingkat UKE 1" [ref=f10e1077]: Sekretariat Jenderal
+              - generic [ref=f10e1078]:
+                - generic [ref=f10e1079]: Unit Kerja
+                - textbox "Unit Kerja" [ref=f10e1080]: Biro SDM
+              - generic [ref=f10e1081]:
+                - generic [ref=f10e1082]: Penanda
+                - combobox "Penanda" [ref=f10e1083]:
+                  - option "Pilih" [selected]
+                  - option "Renja"
+                  - option "Non-Renja"
+              - generic [ref=f10e1084]:
+                - generic [ref=f10e1085]: Sasaran Strategis
+                - generic [ref=f10e1087]:
+                  - textbox "Sasaran Strategis" [ref=f10e1088]:
+                    - /placeholder: Pilih atau ketik Sasaran Strategis
+                  - button "Buka pilihan Sasaran Strategis" [ref=f10e1089] [cursor=pointer]: ▾
+                - text: Klik panah untuk melihat sasaran dari database. Jika belum tersedia, ketik sasaran baru lalu pilih “Gunakan sasaran manual”.
+              - generic [ref=f10e1090]:
+                - generic [ref=f10e1091]: Deskripsi Sasaran Strategis
+                - textbox "Deskripsi Sasaran Strategis" [ref=f10e1092]:
+                  - /placeholder: Isi deskripsi Sasaran Strategis
+              - generic [ref=f10e1093]:
+                - generic [ref=f10e1094]: Indikator Kinerja Utama
+                - textbox "Indikator Kinerja Utama" [ref=f10e1095]
+              - generic [ref=f10e1096]:
+                - generic [ref=f10e1097]: Deskripsi
+                - textbox "Deskripsi" [ref=f10e1098]
+              - generic [ref=f10e1099]:
+                - generic [ref=f10e1100]: Formula
+                - generic [ref=f10e1101]:
+                  - generic "Editor formula indikator kinerja utama" [ref=f10e1103]:
+                    - generic [ref=f10e1104]:
+                      - textbox
+                      - generic [ref=f10e1107]:
+                        - button [ref=f10e1108] [cursor=pointer]:
+                          - img "Toggle Virtual Keyboard" [ref=f10e1109]
+                          - text: Toggle Virtual Keyboard
+                        - button [ref=f10e1111] [cursor=pointer]:
+                          - img "Menu" [ref=f10e1112]
+                          - text: Menu
+                      - generic [ref=f10e1114]:
+                        - status
+                  - generic [ref=f10e1115]: Gunakan toolbar/keyboard matematika untuk pecahan, ×, ÷, pangkat, akar, kurung, dan simbol lainnya. Formula disimpan sebagai LaTeX.
+              - generic [ref=f10e1116]:
+                - generic [ref=f10e1117]: Satuan Pengukuran
+                - textbox "Satuan Pengukuran" [ref=f10e1118]
+              - generic [ref=f10e1119]:
+                - generic [ref=f10e1120]:
+                  - generic [ref=f10e1121]: Unit/Pihak Penyedia Data
+                  - combobox "Unit/Pihak Penyedia Data" [ref=f10e1122]:
+                    - option "Pilih"
+                    - option "Biro Hukum"
+                    - option "Biro Humas"
+                    - option "Biro Keuangan"
+                    - option "Biro SDM" [selected]
+                    - option "Biro Umum"
+                    - option "Deputi Bidang Informasi dan Data"
+                    - option "Deputi Bidang Koordinasi dan Supervisi"
+                    - option "Deputi Bidang Pencegahan dan Monitoring"
+                    - option "Deputi Bidang Pendidikan dan Peran Serta Masyarakat"
+                    - option "Deputi Bidang Penindakan dan Eksekusi"
+                    - option "Direktorat Antikorupsi Badan Usaha"
+                    - option "Direktorat Deteksi dan Analisis Korupsi"
+                    - option "Direktorat Gratifikasi dan Pelayanan Publik"
+                    - option "Direktorat Jejaring Pendidikan"
+                    - option "Direktorat Koordinasi dan Supervisi Wil I"
+                    - option "Direktorat Koordinasi dan Supervisi Wil II"
+                    - option "Direktorat Koordinasi dan Supervisi Wil III"
+                    - option "Direktorat Koordinasi dan Supervisi Wil IV"
+                    - option "Direktorat Koordinasi dan Supervisi Wil V"
+                    - option "Direktorat Manajemen Informasi"
+                    - option "Direktorat Monitoring"
+                    - option "Direktorat Pelacakan Aset, Pengelolaan Barang Bukti dan Eksekusi"
+                    - option "Direktorat Pelayanan Laporan dan Pengaduan Masyarakat"
+                    - option "Direktorat Pembinaan dan Peran Serta Masyarakat"
+                    - option "Direktorat Pembinaan Jaringan Kerjasama Antar Instansi dan Komisi"
+                    - option "Direktorat Pendidikan dan Pelatihan Antikorupsi"
+                    - option "Direktorat Penuntutan"
+                    - option "Direktorat Penyelidikan"
+                    - option "Direktorat Penyidikan"
+                    - option "Direktorat PP LHKPN"
+                    - option "Direktorat Sosialisasi dan Kampanye Antikorupsi"
+                    - option "Inspektorat"
+                    - option "Pusat Perencanaan Strategis PK"
+                    - option "Sekretariat Dewan Pengawas"
+                    - option "Sekretariat Jenderal"
+                - generic [ref=f10e1123]:
+                  - generic [ref=f10e1124]: Validator Data
+                  - combobox "Validator Data" [ref=f10e1125]:
+                    - option "Pilih"
+                    - option "Biro Hukum"
+                    - option "Biro Humas"
+                    - option "Biro Keuangan"
+                    - option "Biro SDM" [selected]
+                    - option "Biro Umum"
+                    - option "Deputi Bidang Informasi dan Data"
+                    - option "Deputi Bidang Koordinasi dan Supervisi"
+                    - option "Deputi Bidang Pencegahan dan Monitoring"
+                    - option "Deputi Bidang Pendidikan dan Peran Serta Masyarakat"
+                    - option "Deputi Bidang Penindakan dan Eksekusi"
+                    - option "Direktorat Antikorupsi Badan Usaha"
+                    - option "Direktorat Deteksi dan Analisis Korupsi"
+                    - option "Direktorat Gratifikasi dan Pelayanan Publik"
+                    - option "Direktorat Jejaring Pendidikan"
+                    - option "Direktorat Koordinasi dan Supervisi Wil I"
+                    - option "Direktorat Koordinasi dan Supervisi Wil II"
+                    - option "Direktorat Koordinasi dan Supervisi Wil III"
+                    - option "Direktorat Koordinasi dan Supervisi Wil IV"
+                    - option "Direktorat Koordinasi dan Supervisi Wil V"
+                    - option "Direktorat Manajemen Informasi"
+                    - option "Direktorat Monitoring"
+                    - option "Direktorat Pelacakan Aset, Pengelolaan Barang Bukti dan Eksekusi"
+                    - option "Direktorat Pelayanan Laporan dan Pengaduan Masyarakat"
+                    - option "Direktorat Pembinaan dan Peran Serta Masyarakat"
+                    - option "Direktorat Pembinaan Jaringan Kerjasama Antar Instansi dan Komisi"
+                    - option "Direktorat Pendidikan dan Pelatihan Antikorupsi"
+                    - option "Direktorat Penuntutan"
+                    - option "Direktorat Penyelidikan"
+                    - option "Direktorat Penyidikan"
+                    - option "Direktorat PP LHKPN"
+                    - option "Direktorat Sosialisasi dan Kampanye Antikorupsi"
+                    - option "Inspektorat"
+                    - option "Pusat Perencanaan Strategis PK"
+                    - option "Sekretariat Dewan Pengawas"
+                    - option "Sekretariat Jenderal"
+              - generic [ref=f10e1126]:
+                - generic [ref=f10e1127]: Sumber Data
+                - textbox "Sumber Data" [ref=f10e1128]:
+                  - /placeholder: Masukkan sumber data
+              - generic [ref=f10e1129]:
+                - generic [ref=f10e1130]: Tindakan bila data belum tersedia
+                - textbox "Tindakan bila data belum tersedia" [ref=f10e1131]:
+                  - /placeholder: Masukkan tindakan bila data belum tersedia
+              - generic [ref=f10e1132]:
+                - generic [ref=f10e1133]:
+                  - generic [ref=f10e1134]: Konsolidasi Periode
+                  - combobox "Konsolidasi Periode" [ref=f10e1135]:
+                    - option "SUM" [selected]
+                    - option "AVERAGE"
+                    - option "TAKE_LAST_KNOWN"
+                - generic [ref=f10e1136]:
+                  - generic [ref=f10e1137]: Jenis Cascading
+                  - combobox "Jenis Cascading" [ref=f10e1138]:
+                    - option "FULLY" [selected]
+                    - option "PARTIALLY"
+                    - option "NON_DIRECT"
+              - generic [ref=f10e1139]:
+                - generic [ref=f10e1140]:
+                  - generic [ref=f10e1141]: Konsolidasi Lokasi
+                  - combobox "Konsolidasi Lokasi" [ref=f10e1142]:
+                    - option "SUM" [selected]
+                    - option "AVERAGE"
+                    - option "RAW_DATA"
+                - generic [ref=f10e1143]:
+                  - generic [ref=f10e1144]: Polarisasi
+                  - combobox "Polarisasi" [ref=f10e1145]:
+                    - option "MAXIMIZE" [selected]
+                    - option "STABILIZE"
+                    - option "MINIMIZE"
+              - generic [ref=f10e1146]:
+                - generic [ref=f10e1147]: Periode Pelaporan
+                - combobox "Periode Pelaporan" [ref=f10e1148]:
+                  - option "QUARTERLY" [selected]
+                  - option "YEARLY"
+                  - option "MONTHLY"
+                  - option "SEMESTERLY"
+              - generic [ref=f10e1149]:
+                - generic [ref=f10e1150]:
+                  - generic [ref=f10e1151]: Target TW 1
+                  - spinbutton "Target TW 1" [ref=f10e1152]
+                - generic [ref=f10e1153]:
+                  - generic [ref=f10e1154]: Target TW 2
+                  - spinbutton "Target TW 2" [ref=f10e1155]
+                - generic [ref=f10e1156]:
+                  - generic [ref=f10e1157]: Target TW 3
+                  - spinbutton "Target TW 3" [ref=f10e1158]
+                - generic [ref=f10e1159]:
+                  - generic [ref=f10e1160]: Target TW 4
+                  - spinbutton "Target TW 4" [ref=f10e1161]
+              - generic [ref=f10e1162]:
+                - generic [ref=f10e1163]: Target Tahunan
+                - textbox "Target Tahunan" [ref=f10e1164]: "0"
+              - generic [ref=f10e1165]:
+                - button "Simpan Draft" [ref=f10e1166] [cursor=pointer]:
+                  - generic [aria-hidden] [ref=f10e1167]: 
+                  - text: Simpan Draft
+                - button "Batal" [ref=f10e1168] [cursor=pointer]:
+                  - generic [aria-hidden] [ref=f10e1169]: 
+                  - text: Batal
+          - generic [ref=f10e1170]:
+            - generic [ref=f10e1171]:
+              - generic [ref=f10e1172]: Daftar Manual IKU
+              - generic [ref=f10e1173]: 
+            - generic [ref=f10e1174]:
+              - generic [ref=f10e1175]:
+                - generic [ref=f10e1176]:
+                  - generic [ref=f10e1177]: Filter Unit
+                  - combobox "Filter Unit" [ref=f10e1178]:
+                    - option "Semua Unit" [selected]
+                    - option "Biro Hukum"
+                    - option "Biro Humas"
+                    - option "Biro Keuangan"
+                    - option "Biro SDM"
+                    - option "Biro Umum"
+                    - option "Deputi Bidang Informasi dan Data"
+                    - option "Deputi Bidang Koordinasi dan Supervisi"
+                    - option "Deputi Bidang Pencegahan dan Monitoring"
+                    - option "Deputi Bidang Pendidikan dan Peran Serta Masyarakat"
+                    - option "Deputi Bidang Penindakan dan Eksekusi"
+                    - option "Direktorat Antikorupsi Badan Usaha"
+                    - option "Direktorat Deteksi dan Analisis Korupsi"
+                    - option "Direktorat Gratifikasi dan Pelayanan Publik"
+                    - option "Direktorat Jejaring Pendidikan"
+                    - option "Direktorat Koordinasi dan Supervisi Wil I"
+                    - option "Direktorat Koordinasi dan Supervisi Wil II"
+                    - option "Direktorat Koordinasi dan Supervisi Wil III"
+                    - option "Direktorat Koordinasi dan Supervisi Wil IV"
+                    - option "Direktorat Koordinasi dan Supervisi Wil V"
+                    - option "Direktorat Manajemen Informasi"
+                    - option "Direktorat Monitoring"
+                    - option "Direktorat Pelacakan Aset, Pengelolaan Barang Bukti dan Eksekusi"
+                    - option "Direktorat Pelayanan Laporan dan Pengaduan Masyarakat"
+                    - option "Direktorat Pembinaan dan Peran Serta Masyarakat"
+                    - option "Direktorat Pembinaan Jaringan Kerjasama Antar Instansi dan Komisi"
+                    - option "Direktorat Pendidikan dan Pelatihan Antikorupsi"
+                    - option "Direktorat Penuntutan"
+                    - option "Direktorat Penyelidikan"
+                    - option "Direktorat Penyidikan"
+                    - option "Direktorat PP LHKPN"
+                    - option "Direktorat Sosialisasi dan Kampanye Antikorupsi"
+                    - option "Inspektorat"
+                    - option "Pusat Perencanaan Strategis PK"
+                    - option "Sekretariat Dewan Pengawas"
+                    - option "Sekretariat Jenderal"
+                - generic [ref=f10e1179]:
+                  - generic [ref=f10e1180]: Filter Tahun
+                  - spinbutton "Filter Tahun" [ref=f10e1181]: "2026"
+              - table [ref=f10e1183]:
+                - rowgroup [ref=f10e1184]:
+                  - row [ref=f10e1185]:
+                    - columnheader [ref=f10e1186]
+                    - columnheader "Unit" [ref=f10e1187]
+                    - columnheader "IKU" [ref=f10e1188]
+                    - columnheader "Tahun" [ref=f10e1189]
+                    - columnheader "Target Tahunan" [ref=f10e1190]
+                    - columnheader "Status" [ref=f10e1191]
+                    - columnheader "Action" [ref=f10e1192]
+                - rowgroup [ref=f10e1193]:
+                  - row [ref=f10e1194]:
+                    - cell [ref=f10e1195]
+                    - cell "Biro SDM" [ref=f10e1196]
+                    - cell "FIX-VERIFY-716122" [ref=f10e1197]
+                    - cell "2026" [ref=f10e1198]
+                    - cell "10" [ref=f10e1199]
+                    - cell "APPROVED" [ref=f10e1200]
+                    - cell [ref=f10e1201]:
+                      - button "Detail" [ref=f10e1203] [cursor=pointer]:
+                        - generic [aria-hidden] [ref=f10e1204]: 
+                        - text: Detail
+                  - row [ref=f10e1205]:
+                    - cell [ref=f10e1206]
+                    - cell "Biro SDM" [ref=f10e1207]
+                    - cell "UI-REPRO-269837" [ref=f10e1208]
+                    - cell "2026" [ref=f10e1209]
+                    - cell "100" [ref=f10e1210]
+                    - cell "REVIEWED" [ref=f10e1211]
+                    - cell [ref=f10e1212]:
+                      - button "Detail" [ref=f10e1214] [cursor=pointer]:
+                        - generic [aria-hidden] [ref=f10e1215]: 
+                        - text: Detail
+                  - row [ref=f10e1216]:
+                    - cell [ref=f10e1217]
+                    - cell "Biro SDM" [ref=f10e1218]
+                    - cell "(Draft)" [ref=f10e1219]
+                    - cell "2026" [ref=f10e1220]
+                    - cell "10" [ref=f10e1221]
+                    - cell "REVIEWED" [ref=f10e1222]
+                    - cell [ref=f10e1223]:
+                      - button "Detail" [ref=f10e1225] [cursor=pointer]:
+                        - generic [aria-hidden] [ref=f10e1226]: 
+                        - text: Detail
+                  - row [ref=f10e1227]:
+                    - cell [ref=f10e1228]
+                    - cell "Biro SDM" [ref=f10e1229]
+                    - cell "(Draft)" [ref=f10e1230]
+                    - cell "2026" [ref=f10e1231]
+                    - cell "10" [ref=f10e1232]
+                    - cell "REVIEWED" [ref=f10e1233]
+                    - cell [ref=f10e1234]:
+                      - button "Detail" [ref=f10e1236] [cursor=pointer]:
+                        - generic [aria-hidden] [ref=f10e1237]: 
+                        - text: Detail
+                  - row [ref=f10e1238]:
+                    - cell [ref=f10e1239]
+                    - cell "Biro SDM" [ref=f10e1240]
+                    - cell "(Draft)" [ref=f10e1241]
+                    - cell "2026" [ref=f10e1242]
+                    - cell "100" [ref=f10e1243]
+                    - cell "REVIEWED" [ref=f10e1244]
+                    - cell [ref=f10e1245]:
+                      - button "Detail" [ref=f10e1247] [cursor=pointer]:
+                        - generic [aria-hidden] [ref=f10e1248]: 
+                        - text: Detail
+                  - row [ref=f10e1249]:
+                    - cell [ref=f10e1250]
+                    - cell "Biro SDM" [ref=f10e1251]
+                    - cell "Evaluasi Rutin terhadap korupsi" [ref=f10e1252]
+                    - cell "2026" [ref=f10e1253]
+                    - cell "1" [ref=f10e1254]
+                    - cell "APPROVED" [ref=f10e1255]
+                    - cell [ref=f10e1256]:
+                      - button "Detail" [ref=f10e1258] [cursor=pointer]:
+                        - generic [aria-hidden] [ref=f10e1259]: 
+                        - text: Detail
+                  - row [ref=f10e1260]:
+                    - cell [ref=f10e1261]
+                    - cell "Biro SDM" [ref=f10e1262]
+                    - cell "Penyuluhan anti korupsi ke universitas" [ref=f10e1263]
+                    - cell "2026" [ref=f10e1264]
+                    - cell "150" [ref=f10e1265]
+                    - cell "REVIEWED" [ref=f10e1266]
+                    - cell [ref=f10e1267]:
+                      - button "Detail" [ref=f10e1269] [cursor=pointer]:
+                        - generic [aria-hidden] [ref=f10e1270]: 
+                        - text: Detail
+                  - row [ref=f10e1271]:
+                    - cell [ref=f10e1272]
+                    - cell "Biro SDM" [ref=f10e1273]
+                    - cell "Meningkatnya masyarakat yang sadar anti korupsi" [ref=f10e1274]
+                    - cell "2026" [ref=f10e1275]
+                    - cell "100" [ref=f10e1276]
+                    - cell "APPROVED" [ref=f10e1277]
+                    - cell [ref=f10e1278]:
+                      - button "Detail" [ref=f10e1280] [cursor=pointer]:
+                        - generic [aria-hidden] [ref=f10e1281]: 
+                        - text: Detail
+  - generic [aria-hidden] [ref=f10e1035]: 73%

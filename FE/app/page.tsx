@@ -92,11 +92,20 @@ export default function App(){
   finally{setLoading(false)}
 };
  useEffect(()=>{if(authReady&&user)reload()},[authReady,user]);
- const executeCreate=async(path:string,body:any,after?:()=>void)=>{
+ const reloadPkOnly=async()=>{
+  try{
+    const rows=await api<Pk[]>('/performance/pks');
+    setPks(Array.isArray(rows)?rows:[]);
+  }catch(e){
+    console.error('GET /performance/pks gagal',e);
+  }
+ };
+ const executeCreate=async(path:string,body:any,after?:()=>void,reloadAll=true)=>{
   try{
     await api(path,{method:'POST',body:JSON.stringify(body)});
     after?.();
-    await reload();
+    if(reloadAll) await reload();
+    else await reloadPkOnly();
     setError('');
     setModal({type:'success',title:'Berhasil',message:'Perubahan berhasil disimpan.'});
   }catch(e){
@@ -105,13 +114,13 @@ export default function App(){
     setModal({type:'error',title:'Gagal',message});
   }
  };
- const doCreate=(path:string,body:any,after?:()=>void)=>{
+ const doCreate=(path:string,body:any,after?:()=>void,reloadAll=true)=>{
    setModal({
      type:'confirm',
      title:'Konfirmasi',
      message:'Apakah Anda yakin ingin menyimpan perubahan ini?',
      confirmText:'Ya, Simpan',
-     onConfirm:()=>executeCreate(path,body,after)
+     onConfirm:()=>executeCreate(path,body,after,reloadAll)
    });
  };
  const stats={contexts:contexts.length,risks:assessments.length,treatments:treatments.length,high:assessments.filter(a=>['15','16','20','25'].includes(a.current_risk||'')).length};
@@ -127,10 +136,10 @@ export default function App(){
    {loading&&tab!=='ropn'?<div className="loading-card">Memuat data SIMONIK…</div>:<>
    {tab==='ropn'&&<RopnDashboard/>}
    {tab==='dashboard'&&<Dashboard stats={stats} ikus={ikus} pks={pks} outputs={outputs} risks={assessments} treatments={treatments} setTab={menu}/>} 
-   {tab==='iku'&&<IkuPage user={user} orgs={orgs} strategicObjectives={strategicObjectives} form={ikuForm} setForm={setIkuForm} data={ikus} create={()=>doCreate('/performance/iku',{...ikuForm,strategic_objective_id:ikuForm.strategic_objective_id||null},()=>setIkuForm((x:any)=>({...x,renja_type:'',strategic_objective_id:'',indicator_name:'',indicator_description:'',formula:'',measurement_unit:'',data_source:'',missing_data_action:'',target_tw1:'',target_tw2:'',target_tw3:'',target_tw4:''})))} updateStatus={async(id,status,notes)=>{await doCreate(`/performance/iku/${id}/status`,{status,notes})}} submitSelected={async(ids)=>{await doCreate(`/performance/iku/submit-bulk`,{ids})}} update={async(id,body)=>{try{const result=await api(`/performance/iku/${id}`,{method:'PUT',body:JSON.stringify(body)});await reload();setModal({type:'success',title:'Berhasil',message:result?.manual_iku_status==='SUBMITTED'?'Perubahan Manual IKU diajukan ulang untuk validasi Bidang Pengelolaan Kinerja dan Risiko serta Pimpinan Unit.':'Manual IKU diperbarui menjadi draft.'})}catch(e){setModal({type:'error',title:'Gagal',message:e instanceof Error?e.message:String(e)})}}} remove={async(id)=>{const iku=ikus.find((x:any)=>x.iku_id===id);const approved=iku?.manual_iku_status==='APPROVED';setModal({type:'confirm',title:approved?'Ajukan Penghapusan Manual IKU':'Hapus Manual IKU',message:approved?'Manual IKU yang sudah disetujui akan diajukan ke Bidang Pengelolaan Kinerja dan Risiko lalu Pimpinan Unit. Data baru dinonaktifkan setelah kedua validasi menyetujui. Lanjutkan?':iku?.manual_iku_status==='DRAFT'?'Manual IKU Draft akan dihapus permanen dari database. Lanjutkan?':'Manual IKU akan menjadi non-active dan tidak tampil di daftar. Lanjutkan?',confirmText:approved?'Ajukan Hapus':'Ya, Hapus',onConfirm:async()=>{try{const result=await api(`/performance/iku/${id}`,{method:'DELETE'});await reload();setModal({type:'success',title:'Berhasil',message:result?.manual_iku_status==='SUBMITTED'?'Penghapusan diajukan untuk validasi Bidang dan Pimpinan Unit.':result?.deleted?'Manual IKU Draft berhasil dihapus dari database.':'Manual IKU dinonaktifkan.'})}catch(e){setModal({type:'error',title:'Gagal',message:e instanceof Error?e.message:String(e)})}}})}}/>}
+   {tab==='iku'&&<IkuPage user={user} orgs={orgs} strategicObjectives={strategicObjectives} form={ikuForm} setForm={setIkuForm} data={ikus} create={()=>doCreate('/performance/iku',{...ikuForm,strategic_objective_id:ikuForm.strategic_objective_id||null},()=>setIkuForm((x:any)=>({...x,renja_type:'',strategic_objective_id:'',indicator_name:'',indicator_description:'',formula:'',measurement_unit:'',data_source:'',missing_data_action:'',target_tw1:'',target_tw2:'',target_tw3:'',target_tw4:''})))} updateStatus={async(id,status,notes)=>{await doCreate(`/performance/iku/${id}/status`,{status,notes})}} reject={async(id,status,notes)=>{try{await api(`/performance/iku/${id}/status`,{method:'POST',body:JSON.stringify({status,notes})});await reload();setModal({type:'success',title:'Berhasil',message:'Manual IKU ditolak. Alasan penolakan tersimpan.'})}catch(e){setModal({type:'error',title:'Gagal',message:e instanceof Error?e.message:String(e)})}}} submitSelected={async(ids)=>{await doCreate(`/performance/iku/submit-bulk`,{ids})}} update={async(id,body)=>{try{const result=await api(`/performance/iku/${id}`,{method:'PUT',body:JSON.stringify(body)});await reload();setModal({type:'success',title:'Berhasil',message:result?.manual_iku_status==='SUBMITTED'?'Perubahan Manual IKU diajukan ulang untuk validasi Bidang Pengelolaan Kinerja dan Risiko serta Pimpinan Unit.':'Manual IKU diperbarui menjadi draft.'})}catch(e){setModal({type:'error',title:'Gagal',message:e instanceof Error?e.message:String(e)})}}} remove={async(id)=>{const iku=ikus.find((x:any)=>x.iku_id===id);const approved=iku?.manual_iku_status==='APPROVED';setModal({type:'confirm',title:approved?'Ajukan Penghapusan Manual IKU':'Hapus Manual IKU',message:approved?'Manual IKU yang sudah disetujui akan diajukan ke Bidang Pengelolaan Kinerja dan Risiko lalu Pimpinan Unit. Data baru dinonaktifkan setelah kedua validasi menyetujui. Lanjutkan?':iku?.manual_iku_status==='DRAFT'?'Manual IKU Draft akan dihapus permanen dari database. Lanjutkan?':'Manual IKU akan menjadi non-active dan tidak tampil di daftar. Lanjutkan?',confirmText:approved?'Ajukan Hapus':'Ya, Hapus',onConfirm:async()=>{try{const result=await api(`/performance/iku/${id}`,{method:'DELETE'});await reload();setModal({type:'success',title:'Berhasil',message:result?.manual_iku_status==='SUBMITTED'?'Penghapusan diajukan untuk validasi Bidang dan Pimpinan Unit.':result?.deleted?'Manual IKU Draft berhasil dihapus dari database.':'Manual IKU dinonaktifkan.'})}catch(e){setModal({type:'error',title:'Gagal',message:e instanceof Error?e.message:String(e)})}}})}}/>}
    {tab==='pk'&&<PkPage orgs={orgs} ikus={ikus} data={pks} user={user}
-      submitBulk={async(year)=>{await doCreate('/performance/pks/submit-bulk',{year},reload)}}
-      confirmBulk={async(year)=>{await doCreate('/performance/pks/confirm-bulk',{year},reload)}}/>}
+      submitBulk={async(year)=>{await doCreate('/performance/pks/submit-bulk',{year},undefined,false)}}
+      confirmBulk={async(year)=>{await doCreate('/performance/pks/confirm-bulk',{year},undefined,false)}}/>}
    {tab==='output'&&<OutputPage orgs={orgs} form={outForm} setForm={setOutForm} data={outputs} create={()=>doCreate('/performance/outputs',outForm,()=>setOutForm((x:any)=>({...x,output_name:'',output_indicator:'',component:'',classification_code:'',target_value:''})))} updateStatus={async(id,status)=>{await doCreate(`/performance/outputs/${id}/status`,{status})}}/>}
    {tab==='planning'||tab==='planning-tor'||tab==='planning-work'?<Placeholder title="Perencanaan Strategis" text="Menu disiapkan sebagai referensi modul perencanaan strategis. Implementasi sumber data Renstra/TOR/RAB mengikuti tahap pengembangan berikutnya."/>:null}
    {tab==='risk-dashboard'&&<RiskDashboardPage api={api} setTab={menu}/>}

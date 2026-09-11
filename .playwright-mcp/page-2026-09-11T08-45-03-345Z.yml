@@ -1,0 +1,52 @@
+- generic [ref=f12e1]:
+  - generic [ref=f12e2]:
+    - generic [ref=f12e3]:
+      - generic [ref=f12e4]:
+        - generic [ref=f12e5]: S
+        - generic [ref=f12e6]:
+          - generic [ref=f12e7]: SIMONIK
+          - generic [ref=f12e8]: Sistem Monitoring Informasi Kinerja KPK
+      - generic [ref=f12e9]:
+        - generic [ref=f12e10]:
+          - text: SISTEM MONITORING INFORMASI KINERJA KPK
+          - heading "Selamat datang kembali" [level=1] [ref=f12e11]
+          - paragraph [ref=f12e12]: Masuk untuk mengakses dashboard dan modul sesuai kewenangan Anda.
+        - generic [ref=f12e13]:
+          - generic [ref=f12e14]:
+            - generic [ref=f12e15]: Username
+            - generic [ref=f12e16]:
+              - generic: 
+              - textbox "Username " [active] [ref=f12e17]:
+                - /placeholder: Masukkan username
+          - generic [ref=f12e18]:
+            - generic [ref=f12e19]: Password
+            - generic [ref=f12e20]:
+              - generic: 
+              - textbox "Password  " [ref=f12e21]:
+                - /placeholder: Masukkan password
+              - button "" [ref=f12e22] [cursor=pointer]
+          - button "Masuk ke SIMONIK " [ref=f12e24] [cursor=pointer]:
+            - text: Masuk ke SIMONIK
+            - generic [ref=f12e25]: 
+        - generic [ref=f12e26]:
+          - generic [ref=f12e27]:
+            - generic [ref=f12e28]: 
+            - text: Akses berbasis peran
+          - generic [ref=f12e29]:
+            - generic [ref=f12e30]: 
+            - text: Koneksi aman
+    - generic [ref=f12e34]:
+      - text: GOVERNANCE • RISK • PERFORMANCE
+      - heading "Satu platform untuk kinerja dan risiko yang terintegrasi." [level=2] [ref=f12e35]
+      - paragraph [ref=f12e36]: SIMONIK membantu memastikan informasi yang tepat tersedia bagi pengguna yang tepat sesuai kewenangan masing-masing.
+      - generic [ref=f12e37]:
+        - generic [ref=f12e38]: 
+        - generic [ref=f12e39]:
+          - generic [ref=f12e40]: Dashboard terintegrasi
+          - generic [ref=f12e41]: Ringkasan informasi lintas modul.
+      - generic [ref=f12e42]:
+        - generic [ref=f12e43]: 
+        - generic [ref=f12e44]:
+          - generic [ref=f12e45]: Role-based access
+          - generic [ref=f12e46]: Menu dan akses disesuaikan dengan peran.
+  - alert [ref=f12e47]

@@ -1,0 +1,98 @@
+- generic [ref=f3e1]:
+  - alert [ref=f3e47]
+  - generic [ref=f3e48]:
+    - complementary [ref=f3e49]:
+      - text: 
+      - generic [ref=f3e50]:
+        - generic [ref=f3e51]:
+          - generic [ref=f3e52]: S
+          - generic [ref=f3e53]:
+            - generic [ref=f3e54]: SIMONIK
+            - generic [ref=f3e55]: Monitoring Informasi Kinerja KPK
+        - generic [ref=f3e56]: MODUL
+      - navigation "Navigasi utama" [ref=f3e57]:
+        - button " Dashboard ROPN" [ref=f3e58] [cursor=pointer]:
+          - generic [ref=f3e59]: 
+          - generic [ref=f3e60]: Dashboard ROPN
+        - button " Dashboard SIMONIK" [ref=f3e61] [cursor=pointer]:
+          - generic [ref=f3e62]: 
+          - generic [ref=f3e63]: Dashboard SIMONIK
+        - generic [ref=f3e64]:
+          - button " Manajemen Kinerja " [expanded] [ref=f3e1033] [cursor=pointer]:
+            - generic [ref=f3e66]: 
+            - generic [ref=f3e67]: Manajemen Kinerja
+            - generic [ref=f3e68]: 
+          - generic [ref=f3e1034]:
+            - button "Manual IKU " [ref=f3e1035] [cursor=pointer]:
+              - generic [ref=f3e1036]: Manual IKU
+              - generic [ref=f3e1037]: 
+            - button "Perjanjian Kinerja " [ref=f3e1038] [cursor=pointer]:
+              - generic [ref=f3e1039]: Perjanjian Kinerja
+              - generic [ref=f3e1040]: 
+            - button "Manual Rincian Output & Komponen " [ref=f3e1041] [cursor=pointer]:
+              - generic [ref=f3e1042]: Manual Rincian Output & Komponen
+              - generic [ref=f3e1043]: 
+        - button " Akun Saya" [active] [ref=f3e69] [cursor=pointer]:
+          - generic [ref=f3e70]: 
+          - generic [ref=f3e71]: Akun Saya
+      - generic [ref=f3e72]:
+        - generic [ref=f3e73]:
+          - generic [ref=f3e74]: 
+          - generic [ref=f3e75]:
+            - generic [ref=f3e76]: Alur terintegrasi
+            - generic [ref=f3e77]: Renstra → Kinerja → Risiko → Monev
+        - button "Collapse sidebar" [ref=f3e78] [cursor=pointer]:
+          - generic [ref=f3e79]: 
+    - main [ref=f3e81]:
+      - generic [ref=f3e82]:
+        - text: 
+        - generic [ref=f3e83]:
+          - text: SISTEM MONITORING INFORMASI KINERJA KPK
+          - heading "Akun Saya" [level=1] [ref=f3e1371]
+          - paragraph [ref=f3e85]: Pengelolaan data kinerja dan risiko secara terintegrasi.
+        - generic [ref=f3e86]:
+          - generic [ref=f3e87]:
+            - generic [ref=f3e88]: 
+            - text: Sistem aktif
+          - generic [ref=f3e89]:
+            - generic [ref=f3e90]: MK
+            - generic [ref=f3e91]:
+              - generic [ref=f3e92]: Manajer Kinerja Demo
+              - generic [ref=f3e93]: Manajer Kinerja
+            - button "Keluar dari SIMONIK" [ref=f3e94] [cursor=pointer]:
+              - generic [ref=f3e95]: 
+      - generic [ref=f3e1372]:
+        - generic [ref=f3e1373]:
+          - generic [ref=f3e1374]: 
+          - generic [ref=f3e1376]:
+            - heading "Akun Saya" [level=2] [ref=f3e1377]
+            - paragraph [ref=f3e1378]: Kelola informasi akun dan perbarui password Anda.
+        - generic [ref=f3e1379]:
+          - generic [ref=f3e1380]:
+            - generic [ref=f3e1381]:
+              - generic [ref=f3e1382]: Informasi Pengguna
+              - generic [ref=f3e1383]: 
+            - generic [ref=f3e1385]:
+              - generic [ref=f3e1386]: Manajer Kinerja Demo
+              - generic [ref=f3e1387]: kinerja
+              - generic [ref=f3e1388]: Manajer Kinerja
+              - generic [ref=f3e1389]: Biro SDM
+              - generic [ref=f3e1390]: Manajer Kinerja
+          - generic [ref=f3e1391]:
+            - generic [ref=f3e1392]:
+              - generic [ref=f3e1393]: Ubah Password
+              - generic [ref=f3e1394]: 
+            - generic [ref=f3e1396]:
+              - generic [ref=f3e1397]:
+                - generic [ref=f3e1398]: Password Saat Ini
+                - textbox "Password Saat Ini" [ref=f3e1399]
+              - generic [ref=f3e1400]:
+                - generic [ref=f3e1401]: Password Baru
+                - textbox "Password Baru" [ref=f3e1402]
+              - generic [ref=f3e1403]:
+                - generic [ref=f3e1404]: Konfirmasi Password Baru
+                - textbox "Konfirmasi Password Baru" [ref=f3e1405]
+              - button "Perbarui Password" [ref=f3e1406] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f3e1407]: 
+                - text: Perbarui Password
+  - generic [aria-hidden] [ref=f3e1022]: 73%

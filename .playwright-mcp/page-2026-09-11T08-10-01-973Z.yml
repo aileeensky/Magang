@@ -1,0 +1,112 @@
+- generic [ref=f4e1]:
+  - alert [ref=f4e47]
+  - generic [ref=f4e48]:
+    - complementary [ref=f4e49]:
+      - text: 
+      - generic [ref=f4e50]:
+        - generic [ref=f4e51]:
+          - generic [ref=f4e52]: S
+          - generic [ref=f4e53]:
+            - generic [ref=f4e54]: SIMONIK
+            - generic [ref=f4e55]: Monitoring Informasi Kinerja KPK
+        - generic [ref=f4e56]: MODUL
+      - navigation "Navigasi utama" [ref=f4e57]:
+        - button " Dashboard ROPN" [ref=f4e58] [cursor=pointer]:
+          - generic [ref=f4e59]: 
+          - generic [ref=f4e60]: Dashboard ROPN
+        - button " Dashboard SIMONIK" [ref=f4e61] [cursor=pointer]:
+          - generic [ref=f4e62]: 
+          - generic [ref=f4e63]: Dashboard SIMONIK
+        - generic [ref=f4e64]:
+          - button " Manajemen Risiko " [expanded] [ref=f4e1036] [cursor=pointer]:
+            - generic [ref=f4e66]: 
+            - generic [ref=f4e67]: Manajemen Risiko
+            - generic [ref=f4e68]: 
+          - generic [ref=f4e1037]:
+            - button "Lingkup, Konteks & Kriteria " [ref=f4e1038] [cursor=pointer]:
+              - generic [ref=f4e1039]: Lingkup, Konteks & Kriteria
+              - generic [ref=f4e1040]: 
+            - button "Penilaian Risiko " [ref=f4e1041] [cursor=pointer]:
+              - generic [ref=f4e1042]: Penilaian Risiko
+              - generic [ref=f4e1043]: 
+            - button "Indikator Risiko Utama " [ref=f4e1044] [cursor=pointer]:
+              - generic [ref=f4e1045]: Indikator Risiko Utama
+              - generic [ref=f4e1046]: 
+            - button "Perlakuan Risiko " [ref=f4e1047] [cursor=pointer]:
+              - generic [ref=f4e1048]: Perlakuan Risiko
+              - generic [ref=f4e1049]: 
+        - button " Monitoring & Reviu" [active] [ref=f4e69] [cursor=pointer]:
+          - generic [ref=f4e70]: 
+          - generic [ref=f4e71]: Monitoring & Reviu
+        - button " Akun Saya" [ref=f4e72] [cursor=pointer]:
+          - generic [ref=f4e73]: 
+          - generic [ref=f4e74]: Akun Saya
+      - generic [ref=f4e75]:
+        - generic [ref=f4e76]:
+          - generic [ref=f4e77]: 
+          - generic [ref=f4e78]:
+            - generic [ref=f4e79]: Alur terintegrasi
+            - generic [ref=f4e80]: Renstra → Kinerja → Risiko → Monev
+        - button "Collapse sidebar" [ref=f4e81] [cursor=pointer]:
+          - generic [ref=f4e82]: 
+    - main [ref=f4e84]:
+      - generic [ref=f4e85]:
+        - text: 
+        - generic [ref=f4e86]:
+          - text: SISTEM MONITORING INFORMASI KINERJA KPK
+          - heading "Monitoring & Reviu" [level=1] [ref=f4e1116]
+          - paragraph [ref=f4e88]: Pengelolaan data kinerja dan risiko secara terintegrasi.
+        - generic [ref=f4e89]:
+          - generic [ref=f4e90]:
+            - generic [ref=f4e91]: 
+            - text: Sistem aktif
+          - generic [ref=f4e92]:
+            - generic [ref=f4e93]: MR
+            - generic [ref=f4e94]:
+              - generic [ref=f4e95]: Manajer Risiko Demo
+              - generic [ref=f4e96]: Manajer Risiko
+            - button "Keluar dari SIMONIK" [ref=f4e97] [cursor=pointer]:
+              - generic [ref=f4e98]: 
+      - generic [ref=f4e1117]:
+        - generic [ref=f4e1118]:
+          - generic [ref=f4e1119]: 
+          - generic [ref=f4e1121]:
+            - heading "Monitoring & Reviu" [level=2] [ref=f4e1122]
+            - paragraph [ref=f4e1123]: Pemantauan pelaksanaan perlakuan risiko dan reviu actual risk sesuai User Requirement.
+        - generic [ref=f4e1124]:
+          - generic [ref=f4e1125]:
+            - generic [ref=f4e1126]:
+              - generic [ref=f4e1127]: Input Monitoring & Reviu
+              - generic [ref=f4e1128]: 
+            - generic [ref=f4e1130]:
+              - generic [ref=f4e1131]:
+                - generic [ref=f4e1132]: Perlakuan Risiko
+                - combobox "Perlakuan Risiko" [ref=f4e1133]:
+                  - option "Pilih perlakuan risiko" [selected]
+              - generic [ref=f4e1134]:
+                - generic [ref=f4e1135]: Tanggal Monitoring
+                - textbox "Tanggal Monitoring" [ref=f4e1136]: 2026-09-11
+              - generic [ref=f4e1137]:
+                - generic [ref=f4e1138]: Monitoring & Reviu
+                - textbox "Monitoring & Reviu" [ref=f4e1139]:
+                  - /placeholder: Diisi oleh Manajer Risiko
+              - button "Simpan Monitoring & Reviu" [ref=f4e1140] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f4e1141]: 
+                - text: Simpan Monitoring & Reviu
+          - generic [ref=f4e1142]:
+            - generic [ref=f4e1143]:
+              - generic [ref=f4e1144]: Riwayat Monitoring
+              - generic [ref=f4e1145]: 
+            - table [ref=f4e1148]:
+              - rowgroup [ref=f4e1149]:
+                - row [ref=f4e1150]:
+                  - columnheader "Risiko" [ref=f4e1151]
+                  - columnheader "Perlakuan" [ref=f4e1152]
+                  - columnheader "Tanggal" [ref=f4e1153]
+                  - columnheader "Reviu" [ref=f4e1154]
+                  - columnheader "Actual Risk" [ref=f4e1155]
+                  - columnheader "Trends" [ref=f4e1156]
+              - rowgroup [ref=f4e1157]:
+                - row [ref=f4e1158]:
+                  - cell "Belum ada data." [ref=f4e1159]
+  - generic [aria-hidden] [ref=f4e1025]: 73%

@@ -1,0 +1,178 @@
+- generic [ref=f4e1]:
+  - alert [ref=f4e47]
+  - generic [ref=f4e48]:
+    - complementary [ref=f4e49]:
+      - text: 
+      - generic [ref=f4e50]:
+        - generic [ref=f4e51]:
+          - generic [ref=f4e52]: S
+          - generic [ref=f4e53]:
+            - generic [ref=f4e54]: SIMONIK
+            - generic [ref=f4e55]: Monitoring Informasi Kinerja KPK
+        - generic [ref=f4e56]: MODUL
+      - navigation "Navigasi utama" [ref=f4e57]:
+        - button " Dashboard ROPN" [ref=f4e58] [cursor=pointer]:
+          - generic [ref=f4e59]: 
+          - generic [ref=f4e60]: Dashboard ROPN
+        - button " Dashboard SIMONIK" [ref=f4e61] [cursor=pointer]:
+          - generic [ref=f4e62]: 
+          - generic [ref=f4e63]: Dashboard SIMONIK
+        - generic [ref=f4e64]:
+          - button " Manajemen Risiko " [expanded] [ref=f4e1036] [cursor=pointer]:
+            - generic [ref=f4e66]: 
+            - generic [ref=f4e67]: Manajemen Risiko
+            - generic [ref=f4e68]: 
+          - generic [ref=f4e1037]:
+            - button "Lingkup, Konteks & Kriteria " [active] [ref=f4e1038] [cursor=pointer]:
+              - generic [ref=f4e1039]: Lingkup, Konteks & Kriteria
+              - generic [ref=f4e1040]: 
+            - button "Penilaian Risiko " [ref=f4e1041] [cursor=pointer]:
+              - generic [ref=f4e1042]: Penilaian Risiko
+              - generic [ref=f4e1043]: 
+            - button "Indikator Risiko Utama " [ref=f4e1044] [cursor=pointer]:
+              - generic [ref=f4e1045]: Indikator Risiko Utama
+              - generic [ref=f4e1046]: 
+            - button "Perlakuan Risiko " [ref=f4e1047] [cursor=pointer]:
+              - generic [ref=f4e1048]: Perlakuan Risiko
+              - generic [ref=f4e1049]: 
+        - button " Monitoring & Reviu" [ref=f4e69] [cursor=pointer]:
+          - generic [ref=f4e70]: 
+          - generic [ref=f4e71]: Monitoring & Reviu
+        - button " Akun Saya" [ref=f4e72] [cursor=pointer]:
+          - generic [ref=f4e73]: 
+          - generic [ref=f4e74]: Akun Saya
+      - generic [ref=f4e75]:
+        - generic [ref=f4e76]:
+          - generic [ref=f4e77]: 
+          - generic [ref=f4e78]:
+            - generic [ref=f4e79]: Alur terintegrasi
+            - generic [ref=f4e80]: Renstra → Kinerja → Risiko → Monev
+        - button "Collapse sidebar" [ref=f4e81] [cursor=pointer]:
+          - generic [ref=f4e82]: 
+    - main [ref=f4e84]:
+      - generic [ref=f4e85]:
+        - text: 
+        - generic [ref=f4e86]:
+          - text: SISTEM MONITORING INFORMASI KINERJA KPK
+          - heading "Manajemen Risiko" [level=1] [ref=f4e1050]
+          - paragraph [ref=f4e88]: Pengelolaan data kinerja dan risiko secara terintegrasi.
+        - generic [ref=f4e89]:
+          - generic [ref=f4e90]:
+            - generic [ref=f4e91]: 
+            - text: Sistem aktif
+          - generic [ref=f4e92]:
+            - generic [ref=f4e93]: MR
+            - generic [ref=f4e94]:
+              - generic [ref=f4e95]: Manajer Risiko Demo
+              - generic [ref=f4e96]: Manajer Risiko
+            - button "Keluar dari SIMONIK" [ref=f4e97] [cursor=pointer]:
+              - generic [ref=f4e98]: 
+      - generic [ref=f4e1051]:
+        - generic [ref=f4e1052]:
+          - generic [ref=f4e1053]: 
+          - generic [ref=f4e1055]:
+            - heading "Lingkup, Konteks & Kriteria" [level=2] [ref=f4e1056]
+            - paragraph [ref=f4e1057]: LKK disusun dari Manual IKU yang telah disetujui kedua pihak.
+        - generic [ref=f4e1058]:
+          - generic [ref=f4e1059]:
+            - generic [ref=f4e1060]:
+              - generic [ref=f4e1061]: Form LKK
+              - generic [ref=f4e1062]: 
+            - generic [ref=f4e1064]:
+              - generic [ref=f4e1065]:
+                - generic [ref=f4e1066]: Unit Kerja
+                - combobox "Unit Kerja" [ref=f4e1067]:
+                  - option "Biro Hukum"
+                  - option "Biro Humas"
+                  - option "Biro Keuangan"
+                  - option "Biro SDM" [selected]
+                  - option "Biro Umum"
+                  - option "Deputi Bidang Informasi dan Data"
+                  - option "Deputi Bidang Koordinasi dan Supervisi"
+                  - option "Deputi Bidang Pencegahan dan Monitoring"
+                  - option "Deputi Bidang Pendidikan dan Peran Serta Masyarakat"
+                  - option "Deputi Bidang Penindakan dan Eksekusi"
+                  - option "Direktorat Antikorupsi Badan Usaha"
+                  - option "Direktorat Deteksi dan Analisis Korupsi"
+                  - option "Direktorat Gratifikasi dan Pelayanan Publik"
+                  - option "Direktorat Jejaring Pendidikan"
+                  - option "Direktorat Koordinasi dan Supervisi Wil I"
+                  - option "Direktorat Koordinasi dan Supervisi Wil II"
+                  - option "Direktorat Koordinasi dan Supervisi Wil III"
+                  - option "Direktorat Koordinasi dan Supervisi Wil IV"
+                  - option "Direktorat Koordinasi dan Supervisi Wil V"
+                  - option "Direktorat Manajemen Informasi"
+                  - option "Direktorat Monitoring"
+                  - option "Direktorat Pelacakan Aset, Pengelolaan Barang Bukti dan Eksekusi"
+                  - option "Direktorat Pelayanan Laporan dan Pengaduan Masyarakat"
+                  - option "Direktorat Pembinaan dan Peran Serta Masyarakat"
+                  - option "Direktorat Pembinaan Jaringan Kerjasama Antar Instansi dan Komisi"
+                  - option "Direktorat Pendidikan dan Pelatihan Antikorupsi"
+                  - option "Direktorat Penuntutan"
+                  - option "Direktorat Penyelidikan"
+                  - option "Direktorat Penyidikan"
+                  - option "Direktorat PP LHKPN"
+                  - option "Direktorat Sosialisasi dan Kampanye Antikorupsi"
+                  - option "Inspektorat"
+                  - option "Pusat Perencanaan Strategis PK"
+                  - option "Sekretariat Dewan Pengawas"
+                  - option "Sekretariat Jenderal"
+              - generic [ref=f4e1068]:
+                - generic [ref=f4e1069]: Sasaran Strategis
+                - combobox "Sasaran Strategis" [ref=f4e1070]:
+                  - option "Pilih Sasaran Strategis" [selected]
+                  - option "Kasus Korupsi Menurun"
+                  - option "Pendidikan Anti Korupsi"
+              - generic [ref=f4e1071]:
+                - generic [ref=f4e1072]: Manual IKU disetujui
+                - combobox "Manual IKU disetujui" [ref=f4e1073]:
+                  - option "Pilih Manual IKU" [selected]
+                  - option "Kasus Korupsi Menurun — Evaluasi Rutin terhadap korupsi"
+                  - option "Pendidikan Anti Korupsi — Meningkatnya masyarakat yang sadar anti korupsi"
+                  - option "Pendidikan Anti Korupsi — Penyuluhan anti korupsi ke universitas"
+                  - option "SS — (Draft)"
+                  - option "SS — (Draft)"
+                  - option "SS — (Draft)"
+              - generic [ref=f4e1074]:
+                - generic [ref=f4e1075]: Rincian Output / Komponen
+                - textbox "Rincian Output / Komponen" [ref=f4e1076]
+              - generic [ref=f4e1077]:
+                - generic [ref=f4e1078]: Proses Bisnis
+                - textbox "Proses Bisnis" [ref=f4e1079]
+              - generic [ref=f4e1080]:
+                - generic [ref=f4e1081]: Konteks Eksternal
+                - textbox "Konteks Eksternal" [ref=f4e1082]
+              - generic [ref=f4e1083]:
+                - generic [ref=f4e1084]: Konteks Internal
+                - textbox "Konteks Internal" [ref=f4e1085]
+              - button "Simpan Draft" [ref=f4e1086] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f4e1087]: 
+                - text: Simpan Draft
+          - generic [ref=f4e1088]:
+            - generic [ref=f4e1089]:
+              - generic [ref=f4e1090]: Daftar LKK
+              - generic [ref=f4e1091]: 
+            - generic [ref=f4e1092]:
+              - generic [ref=f4e1093]:
+                - generic [ref=f4e1094]: Filter Tahun
+                - spinbutton "Filter Tahun" [ref=f4e1095]: "2026"
+              - table [ref=f4e1097]:
+                - rowgroup [ref=f4e1098]:
+                  - row [ref=f4e1099]:
+                    - columnheader "Pilih" [ref=f4e1100]
+                    - columnheader "Unit" [ref=f4e1101]
+                    - columnheader "Sasaran Strategis" [ref=f4e1102]
+                    - columnheader "Manual IKU" [ref=f4e1103]
+                    - columnheader "Output" [ref=f4e1104]
+                    - columnheader "Proses Bisnis" [ref=f4e1105]
+                    - columnheader "Konteks Internal" [ref=f4e1106]
+                    - columnheader "Konteks Eksternal" [ref=f4e1107]
+                    - columnheader "Status" [ref=f4e1108]
+                    - columnheader "Detail" [ref=f4e1109]
+                - rowgroup [ref=f4e1110]:
+                  - row [ref=f4e1111]:
+                    - cell "Belum ada data." [ref=f4e1112]
+              - button "Ajukan" [disabled] [ref=f4e1114]:
+                - generic [aria-hidden] [ref=f4e1115]: 
+                - text: Ajukan
+  - generic [aria-hidden] [ref=f4e1025]: 73%
