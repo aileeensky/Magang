@@ -1,0 +1,182 @@
+"use client";
+import type { Org, Context, RiskReferences } from "../../../types";
+import { Card, Field, PageTitle, DataTable, RiskStatusActions } from "../../ui";
+export default function ContextPage({
+  orgs,
+  refs,
+  form,
+  setForm,
+  data,
+  create,
+  onSelect,
+}: {
+  orgs: Org[];
+  refs: RiskReferences;
+  form: any;
+  setForm: (x: any) => void;
+  data: Context[];
+  create: () => void;
+  onSelect: (id: string) => void;
+  updateStatus: (id: string, status: string) => void;
+  canAuthor: boolean;
+  canReview: boolean;
+  canApprove: boolean;
+}) {
+  const pks = refs.performance_pks.filter(
+    (x) => !form.performance_iku_id || x.iku_id === form.performance_iku_id,
+  );
+  return (
+    <section>
+      <PageTitle
+        icon="bi-diagram-3"
+        title="Lingkup, Konteks & Kriteria"
+        subtitle="LKK menggunakan referensi Manajemen Kinerja karena Perencanaan Strategis belum menjadi sumber aktif."
+      />
+      <div className="grid-2">
+        <Card title="Tambah LKK">
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              create();
+            }}
+          >
+            <Field label="Unit Kerja">
+              <select
+                required
+                value={form.organization_id}
+                onChange={(e) =>
+                  setForm({ ...form, organization_id: e.target.value })
+                }
+              >
+                {orgs.map((o) => (
+                  <option key={o.organization_id} value={o.organization_id}>
+                    {o.organization_name}
+                  </option>
+                ))}
+              </select>
+            </Field>
+            <Field label="Sasaran Strategis">
+              <select
+                required
+                value={form.performance_iku_id || ""}
+                onChange={(e) =>
+                  setForm({
+                    ...form,
+                    performance_iku_id: e.target.value,
+                    performance_agreement_id: "",
+                  })
+                }
+              >
+                <option value="">Pilih Manual IKU</option>
+                {refs.performance_ikus.map((x) => (
+                  <option key={x.iku_id} value={x.iku_id}>
+                    {x.year} — {x.strategic_objective_name || "SS belum diisi"}{" "}
+                    — {x.indicator_name}
+                  </option>
+                ))}
+              </select>
+            </Field>
+            <Field label="Perjanjian Kinerja">
+              <select
+                value={form.performance_agreement_id || ""}
+                onChange={(e) =>
+                  setForm({ ...form, performance_agreement_id: e.target.value })
+                }
+              >
+                <option value="">Pilih PK (opsional)</option>
+                {pks.map((x) => (
+                  <option key={x.agreement_id} value={x.agreement_id}>
+                    {x.year} — {x.indicator_name || x.iku_id}
+                  </option>
+                ))}
+              </select>
+            </Field>
+            <Field label="Rincian Output / Komponen">
+              <select
+                value={form.performance_output_manual_id || ""}
+                onChange={(e) =>
+                  setForm({
+                    ...form,
+                    performance_output_manual_id: e.target.value,
+                  })
+                }
+              >
+                <option value="">Pilih Output (opsional)</option>
+                {refs.performance_outputs.map((x) => (
+                  <option key={x.output_manual_id} value={x.output_manual_id}>
+                    {x.year} — {x.code ? `${x.code} — ` : ""}
+                    {x.name}
+                  </option>
+                ))}
+              </select>
+            </Field>
+            <Field label="Proses Bisnis (EA Sparks)">
+              <select
+                required
+                value={form.business_process_id || ""}
+                onChange={(e) =>
+                  setForm({ ...form, business_process_id: e.target.value })
+                }
+              >
+                <option value="">Pilih Proses Bisnis</option>
+                {refs.business_processes.map((x) => (
+                  <option
+                    key={x.business_process_id}
+                    value={x.business_process_id}
+                  >
+                    {x.code ? `${x.code} — ` : ""}
+                    {x.name}
+                  </option>
+                ))}
+              </select>
+            </Field>
+            <Field label="Konteks Eksternal">
+              <textarea
+                value={form.external_context || ""}
+                onChange={(e) =>
+                  setForm({ ...form, external_context: e.target.value })
+                }
+              />
+            </Field>
+            <Field label="Konteks Internal">
+              <textarea
+                value={form.internal_context || ""}
+                onChange={(e) =>
+                  setForm({ ...form, internal_context: e.target.value })
+                }
+              />
+            </Field>
+            <button className="btn-primary">Simpan LKK</button>
+          </form>
+        </Card>
+        <Card title="Daftar LKK">
+          <DataTable
+            headers={[
+              "Unit",
+              "Sasaran Strategis",
+              "Manual IKU",
+              "Output",
+              "Proses Bisnis",
+              "Status",
+            ]}
+            rows={data.map((c) => [
+              c.organization_name || "—",
+              c.strategic_objective_name || "—",
+              c.performance_iku_name || "—",
+              c.performance_output_name || "—",
+              c.business_process_name || "—",
+              <RiskStatusActions
+                status={c.status}
+                onChange={(st) => updateStatus(c.risk_context_id, st)}
+                canAuthor={canAuthor}
+                canReview={canReview}
+                canApprove={canApprove}
+              />,
+            ])}
+            onRow={(i) => onSelect(data[i].risk_context_id)}
+          />
+        </Card>
+      </div>
+    </section>
+  );
+}

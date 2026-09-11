@@ -1,0 +1,164 @@
+"use client";
+
+import { useEffect } from "react";
+import type { Org, Iku, Pk } from "../../../types";
+import { Card, Field, PageTitle, DataTable, StatusActions } from "../../ui";
+
+const formatTarget = (value: number | string | null | undefined) => {
+  if (value === null || value === undefined || value === "") {
+    return "—";
+  }
+
+  const num = Number(value);
+
+  if (Number.isNaN(num)) {
+    return "—";
+  }
+
+  return num.toString();
+};
+
+export default function PkPage({
+  orgs,
+  ikus,
+  form,
+  setForm,
+  data,
+  create,
+  updateStatus,
+}: {
+  orgs: Org[];
+  ikus: Iku[];
+  form: any;
+  setForm: (x: any) => void;
+  data: Pk[];
+  create: () => void;
+  updateStatus: (id: string, status: string) => void;
+}) {
+  useEffect(() => {
+    const i = ikus.find((x) => x.iku_id === form.iku_id);
+
+    if (i) {
+      setForm((x: any) => ({
+        ...x,
+        target_tw1:
+          x.target_tw1 === "" ? formatTarget(i.target_tw1) : x.target_tw1,
+
+        target_tw2:
+          x.target_tw2 === "" ? formatTarget(i.target_tw2) : x.target_tw2,
+
+        target_tw3:
+          x.target_tw3 === "" ? formatTarget(i.target_tw3) : x.target_tw3,
+
+        target_tw4:
+          x.target_tw4 === "" ? formatTarget(i.target_tw4) : x.target_tw4,
+        year: i.year,
+      }));
+    }
+  }, [form.iku_id]);
+
+  return (
+    <section>
+      <PageTitle
+        icon="bi-file-earmark-check"
+        title="Perjanjian Kinerja"
+        subtitle="Menyusun rancangan Perjanjian Kinerja dengan target otomatis dari Manual IKU."
+      />
+
+      <div className="grid-2">
+        <Card title="Form Perjanjian Kinerja">
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              create();
+            }}
+          >
+            <Field label="Unit Kerja">
+              <select
+                required
+                value={form.organization_id}
+                onChange={(e) =>
+                  setForm({
+                    ...form,
+                    organization_id: e.target.value,
+                  })
+                }
+              >
+                {orgs.map((o) => (
+                  <option key={o.organization_id} value={o.organization_id}>
+                    {o.organization_name}
+                  </option>
+                ))}
+              </select>
+            </Field>
+
+            <Field label="Manual IKU">
+              <select
+                required
+                value={form.iku_id}
+                onChange={(e) =>
+                  setForm({
+                    ...form,
+                    iku_id: e.target.value,
+                  })
+                }
+              >
+                <option value="">Pilih IKU</option>
+
+                {ikus.map((i) => (
+                  <option key={i.iku_id} value={i.iku_id}>
+                    {i.indicator_name} — {i.year}
+                  </option>
+                ))}
+              </select>
+            </Field>
+
+            <div className="form-row">
+              {[1, 2, 3, 4].map((n) => (
+                <Field key={n} label={`Target TW ${n}`}>
+                  <input
+                    type="number"
+                    step="any"
+                    value={form[`target_tw${n}`] ?? ""}
+                    onChange={(e) =>
+                      setForm({
+                        ...form,
+                        [`target_tw${n}`]: e.target.value,
+                      })
+                    }
+                  />
+                </Field>
+              ))}
+            </div>
+
+            <button className="btn-primary">Simpan Perjanjian Kinerja</button>
+          </form>
+        </Card>
+
+        <Card title="Daftar Perjanjian Kinerja">
+          <DataTable
+            headers={["Unit", "IKU", "Tahun", "Target TW1–TW4", "Status"]}
+            rows={data.map((x) => [
+              x.organization_name || "—",
+              x.indicator_name || x.iku_id,
+              x.year,
+
+              // Formatter target
+              `${formatTarget(x.target_tw1)} / ${formatTarget(
+                x.target_tw2,
+              )} / ${formatTarget(x.target_tw3)} / ${formatTarget(
+                x.target_tw4,
+              )}`,
+
+              <StatusActions
+                key={x.agreement_id}
+                status={x.status}
+                onChange={(s) => updateStatus(x.agreement_id, s)}
+              />,
+            ])}
+          />
+        </Card>
+      </div>
+    </section>
+  );
+}

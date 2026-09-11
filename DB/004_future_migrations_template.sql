@@ -1,0 +1,7 @@
+-- SIMONIK - 004_future_migrations_template.sql
+-- Keep future ALTER TABLE/CREATE INDEX changes here only after the clean baseline.
+-- Do not add repair migrations for columns already present in 001_initial_schema.sql.
+-- New changes should be idempotent where practical:
+--   ALTER TABLE ... ADD COLUMN IF NOT EXISTS
+--   CREATE INDEX IF NOT EXISTS
+--   CREATE OR REPLACE VIEW ...

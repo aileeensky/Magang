@@ -1,0 +1,335 @@
+"use client";
+async function resolveStrategicObjective(
+  name: string,
+  periodId?: string | null,
+  code?: string | null
+) {
+  const response = await fetch("/api/performance/strategic-objectives/resolve", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      name,
+      period_id: periodId || null,
+      code: code || null,
+    }),
+  });
+  if (!response.ok) {
+    const body = await response.json().catch(() => ({}));
+    throw new Error(body.error || "Gagal menyimpan sasaran strategis.");
+  }
+  return response.json() as Promise<{
+    strategic_objective_id: string;
+    code: string | null;
+    name: string;
+    created: boolean;
+  }>;
+}
+import type { AuthUser, Iku, Org, StrategicObjective } from "../../../types";
+import {
+  Card,
+  Field,
+  PageTitle,
+  SelectField,
+  DataTable,
+  StatusActions,
+} from "../../ui";
+import MathField from "../../ui/MathField";
+
+type Props = {
+  user: AuthUser;
+  orgs: Org[];
+  strategicObjectives: StrategicObjective[];
+  form: any;
+  setForm: React.Dispatch<React.SetStateAction<any>>;
+  data: Iku[];
+  create: () => void;
+  updateStatus: (id: string, status: string) => void;
+};
+
+export default function IkuPage({
+  user,
+  orgs,
+  strategicObjectives,
+  form,
+  setForm,
+  data,
+  create,
+  updateStatus,
+}: Props) {
+  const currentOrg = orgs.find(
+    (o) => o.organization_id === user.organization_id,
+  );
+  const currentOrgName =
+    currentOrg?.organization_name ||
+    user.organization_name ||
+    "Unit kerja pengguna";
+
+  // Always update from the latest state. This prevents one field (especially
+  // MathLive, which can emit several input events quickly) from restoring an
+  // older snapshot of the form and clearing values entered in other fields.
+  const setField = (key: string, value: any) =>
+    setForm((prev: any) => ({ ...prev, [key]: value }));
+
+  const handleStrategicObjectiveChange = (value: string) => {
+    const normalized = value.trim().toLowerCase();
+    const match = strategicObjectives.find(
+      (x) =>
+        x.name.trim().toLowerCase() === normalized ||
+        (x.code && `${x.code} — ${x.name}`.trim().toLowerCase() === normalized),
+    );
+    if (match) {
+      setForm((prev: any) => ({
+        ...prev,
+        strategic_objective_id: match.strategic_objective_id,
+        strategic_objective_text: match.code
+          ? `${match.code} — ${match.name}`
+          : match.name,
+      }));
+    } else {
+      // Data SS belum tersedia di master: simpan sebagai teks sementara.
+      setForm((prev: any) => ({
+        ...prev,
+        strategic_objective_id: "",
+        strategic_objective_text: value,
+      }));
+    }
+  };
+
+  const formatTarget = (value: number | null | undefined) =>
+    value === null || value === undefined ? "—" : Number(value).toString();
+
+  return (
+    <section>
+      <PageTitle
+        icon="bi-graph-up-arrow"
+        title="Manual Indikator Kinerja Utama"
+        subtitle="Menyusun dan memutakhirkan manual IKU unit kerja sesuai UR SIMONIK."
+      />
+      <div className="grid-2">
+        <Card title="Form Manual IKU">
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              create();
+            }}
+          >
+            <div className="form-row">
+              <Field label="Unit Kerja">
+                <input
+                  type="text"
+                  value={currentOrgName}
+                  readOnly
+                  aria-readonly="true"
+                  aria-label={`Unit kerja ${currentOrgName}`}
+                />
+                <input
+                  type="hidden"
+                  name="organization_id"
+                  value={form.organization_id || user.organization_id || ""}
+                />
+                <small className="field-hint">
+                  Otomatis mengikuti unit kerja yang terhubung dengan username
+                  saat login dan tidak dapat diubah.
+                </small>
+              </Field>
+              <Field label="Tahun">
+                <input
+                  type="number"
+                  value={form.year}
+                  onChange={(e) => setField("year", Number(e.target.value))}
+                />
+              </Field>
+            </div>
+
+            <Field label="Sasaran Strategis (SS)">
+              <input
+                list="strategic-objectives"
+                value={form.strategic_objective_text || ""}
+                onChange={(e) => handleStrategicObjectiveChange(e.target.value)}
+                placeholder={
+                  strategicObjectives.length
+                    ? "Pilih dari daftar atau ketik SS baru"
+                    : "Ketik Sasaran Strategis"
+                }
+                autoComplete="off"
+              />
+              <datalist id="strategic-objectives">
+                {strategicObjectives.map((x) => (
+                  <option
+                    key={x.strategic_objective_id}
+                    value={x.code ? `${x.code} — ${x.name}` : x.name}
+                  />
+                ))}
+              </datalist>
+              <small className="field-hint">
+                Jika SS belum ada di master, kamu tetap bisa mengetik manual. ID
+                master akan dikosongkan dan teks SS digunakan sebagai sementara.
+              </small>
+            </Field>
+
+            <Field label="Deskripsi SS">
+              <textarea
+                value={form.strategic_objective_description}
+                onChange={(e) =>
+                  setField("strategic_objective_description", e.target.value)
+                }
+              />
+            </Field>
+            <Field label="Indikator Kinerja Utama">
+              <input
+                required
+                value={form.indicator_name}
+                onChange={(e) => setField("indicator_name", e.target.value)}
+              />
+            </Field>
+            <Field label="Deskripsi IKU">
+              <textarea
+                value={form.indicator_description}
+                onChange={(e) =>
+                  setField("indicator_description", e.target.value)
+                }
+              />
+            </Field>
+
+            <Field label="Formula">
+              <MathField
+                value={form.formula || ""}
+                onChange={(value) => setField("formula", value)}
+              />
+            </Field>
+
+            <Field label="Satuan Pengukuran">
+              <input
+                value={form.measurement_unit}
+                onChange={(e) => setField("measurement_unit", e.target.value)}
+              />
+            </Field>
+
+            <div className="form-row">
+              <Field label="Unit/Pihak Penyedia Data">
+                <select
+                  value={form.data_provider_org_id || user.organization_id}
+                  onChange={(e) =>
+                    setField("data_provider_org_id", e.target.value)
+                  }
+                >
+                  <option value="">Pilih</option>
+                  {orgs.map((o) => (
+                    <option key={o.organization_id} value={o.organization_id}>
+                      {o.organization_name}
+                    </option>
+                  ))}
+                </select>
+              </Field>
+              <Field label="Validator Data">
+                <select
+                  value={form.data_validator_org_id || user.organization_id}
+                  onChange={(e) =>
+                    setField("data_validator_org_id", e.target.value)
+                  }
+                >
+                  <option value="">Pilih</option>
+                  {orgs.map((o) => (
+                    <option key={o.organization_id} value={o.organization_id}>
+                      {o.organization_name}
+                    </option>
+                  ))}
+                </select>
+              </Field>
+            </div>
+
+            <Field label="Sumber Data">
+              <input
+                value={form.data_source}
+                onChange={(e) => setField("data_source", e.target.value)}
+              />
+            </Field>
+            <Field label="Tindakan bila data belum tersedia">
+              <textarea
+                value={form.missing_data_action}
+                onChange={(e) =>
+                  setField("missing_data_action", e.target.value)
+                }
+              />
+            </Field>
+
+            <div className="form-row">
+              <SelectField
+                label="Konsolidasi Periode"
+                value={form.period_consolidation}
+                set={(v) => setField("period_consolidation", v)}
+                options={["SUM", "AVERAGE", "TAKE_LAST_KNOWN"]}
+              />
+              <SelectField
+                label="Jenis Cascading"
+                value={form.cascading_type}
+                set={(v) => setField("cascading_type", v)}
+                options={["FULLY", "PARTIALLY", "NON_DIRECT"]}
+              />
+            </div>
+            <div className="form-row">
+              <SelectField
+                label="Konsolidasi Lokasi"
+                value={form.location_consolidation}
+                set={(v) => setField("location_consolidation", v)}
+                options={["SUM", "AVERAGE", "RAW_DATA"]}
+              />
+              <SelectField
+                label="Polarisasi"
+                value={form.polarization}
+                set={(v) => setField("polarization", v)}
+                options={["MAXIMIZE", "STABILIZE", "MINIMIZE"]}
+              />
+            </div>
+            <Field label="Periode Pelaporan">
+              <select
+                value={form.reporting_period}
+                onChange={(e) => setField("reporting_period", e.target.value)}
+              >
+                {[
+                  ["MONTHLY", "Bulanan"],
+                  ["QUARTERLY", "Triwulan"],
+                  ["SEMESTERLY", "Semesteran"],
+                  ["YEARLY", "Tahunan"],
+                ].map((x) => (
+                  <option value={x[0]} key={x[0]}>
+                    {x[1]}
+                  </option>
+                ))}
+              </select>
+            </Field>
+            <div className="form-row">
+              {[1, 2, 3, 4].map((n) => (
+                <Field key={n} label={`Target TW ${n}`}>
+                  <input
+                    type="number"
+                    step="any"
+                    value={form[`target_tw${n}`]}
+                    onChange={(e) => setField(`target_tw${n}`, e.target.value)}
+                  />
+                </Field>
+              ))}
+            </div>
+            <button className="btn-primary">Simpan Manual IKU</button>
+          </form>
+        </Card>
+        <Card title="Daftar Manual IKU">
+          <DataTable
+            headers={["Unit", "IKU", "Tahun", "TW1–TW4", "Status"]}
+            rows={data.map((x) => [
+              x.organization_name || "—",
+              x.indicator_name,
+              x.year,
+              `${formatTarget(x.target_tw1)} / ${formatTarget(x.target_tw2)} / ${formatTarget(x.target_tw3)} / ${formatTarget(x.target_tw4)}`,
+              <StatusActions
+                key={x.iku_id}
+                status={x.status}
+                onChange={(s) => updateStatus(x.iku_id, s)}
+              />,
+            ])}
+          />
+        </Card>
+      </div>
+    </section>
+  );
+}
